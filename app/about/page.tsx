@@ -389,9 +389,9 @@ export default function AboutPage() {
                       </div>
 
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Developed and maintained the backend of MondoQ, a quality management and service order platform,
-                        enabling real-time audits, automated workflows, and streamlined task tracking. Improved
-                        operational efficiency by 300% through automation and enhanced communication by 60%.
+                        Developed backend for a quality management platform (Mondoq), enabling efficient audits, service
+                        order tracking, and automated task workflows. Improved operational efficiency by 300% through
+                        automation and enhanced communication by 60%.
                       </p>
 
                       <div className="flex flex-wrap gap-2">
