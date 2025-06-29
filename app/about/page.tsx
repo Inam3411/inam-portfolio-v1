@@ -358,6 +358,56 @@ export default function AboutPage() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Mondoq */}
+                  <div className="relative flex items-start group">
+                    <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10"></div>
+
+                    <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
+                            Backend Developer{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+                              @Software Agency
+                            </span>
+                          </h3>
+                          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4" />
+                              <span>Jul 2020 - May 2021</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4" />
+                              <span>Koblenz, Germany</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
+                          <BarChart3 className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        Developed backend for a quality management platform (Mondoq), enabling efficient audits, service
+                        order tracking, and automated task workflows. Improved operational efficiency by 300% through
+                        automation and enhanced communication by 60%.
+                      </p>
+
+                      <div className="flex flex-wrap gap-2">
+                        {["Node.js", "Express", "MySQL", "AWS EC2", "AWS S3", "AWS SES", "ClickUp"].map(
+                          (tech, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm"
+                            >
+                              {tech}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
