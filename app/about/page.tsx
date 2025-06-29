@@ -1,243 +1,246 @@
+"use client"
+
+import Image from "next/image"
+import { Target, Lightbulb, Code2, Cog, BarChart3, CheckCircle, Globe, Zap, Smartphone, Cloud } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import Header from "@/components/header"
 import HireMeBadge from "@/components/hire-me-badge"
 import LightbulbIcon from "@/components/lightbulb-icon"
-import {
-  Users,
-  Calendar,
-  Code2,
-  Globe,
-  Smartphone,
-  Cloud,
-  Zap,
-  MapPin,
-  Building,
-  ArrowRight,
-  CheckCircle,
-  Target,
-  Lightbulb,
-  Cog,
-  BarChart3,
-} from "lucide-react"
-import { getAboutContent, getWorkflowSteps, getSkillCategories, getExperiences, getColorClasses } from "@/lib/content"
+import { getPersonalInfo, getAboutInfo, getWorkflowSteps, getSkillCategories, getExperiences } from "@/lib/content"
 
 export default function AboutPage() {
-  const about = getAboutContent()
+  const personal = getPersonalInfo()
+  const about = getAboutInfo()
   const workflowSteps = getWorkflowSteps()
   const skillCategories = getSkillCategories()
   const experiences = getExperiences()
 
-  const getIconComponent = (iconName: string) => {
+  const getIcon = (iconName: string) => {
     const iconMap: Record<string, any> = {
-      Target: Target,
-      Lightbulb: Lightbulb,
-      Code2: Code2,
-      Cog: Cog,
-      BarChart3: BarChart3,
-      CheckCircle: CheckCircle,
-      Globe: Globe,
-      Zap: Zap,
-      Smartphone: Smartphone,
-      Cloud: Cloud,
-      Building: Building,
-      Users: Users,
+      Target,
+      Lightbulb,
+      Code2,
+      Cog,
+      BarChart3,
+      CheckCircle,
+      Globe,
+      Zap,
+      Smartphone,
+      Cloud,
     }
     const IconComponent = iconMap[iconName] || Code2
-    return <IconComponent className="w-6 h-6" />
+    return IconComponent
   }
 
-  const getExperienceIcon = (iconName: string) => {
-    const iconMap: Record<string, any> = {
-      Building: Building,
-      Users: Users,
-      Globe: Globe,
-      BarChart3: BarChart3,
+  const getColorClasses = (color: string) => {
+    const colorMap: Record<string, { text: string; bg: string; border: string }> = {
+      emerald: {
+        text: "text-emerald-600 dark:text-emerald-400",
+        bg: "bg-emerald-100 dark:bg-emerald-900/30",
+        border: "border-emerald-200 dark:border-emerald-800",
+      },
+      blue: {
+        text: "text-blue-600 dark:text-blue-400",
+        bg: "bg-blue-100 dark:bg-blue-900/30",
+        border: "border-blue-200 dark:border-blue-800",
+      },
+      purple: {
+        text: "text-purple-600 dark:text-purple-400",
+        bg: "bg-purple-100 dark:bg-purple-900/30",
+        border: "border-purple-200 dark:border-purple-800",
+      },
+      orange: {
+        text: "text-orange-600 dark:text-orange-400",
+        bg: "bg-orange-100 dark:bg-orange-900/30",
+        border: "border-orange-200 dark:border-orange-800",
+      },
+      cyan: {
+        text: "text-cyan-600 dark:text-cyan-400",
+        bg: "bg-cyan-100 dark:bg-cyan-900/30",
+        border: "border-cyan-200 dark:border-cyan-800",
+      },
     }
-    const IconComponent = iconMap[iconName] || Building
-    return <IconComponent className="w-6 h-6 text-white" />
+    return colorMap[color] || colorMap.blue
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800">
       <Header />
 
       <main className="container mx-auto px-6 lg:px-8 py-16">
-        <div className="max-w-6xl mx-auto">
-          {/* Main Heading */}
-          <div className="text-center mb-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/10 via-blue-600/10 to-purple-600/10 blur-3xl -z-10"></div>
-            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-gray-900 via-emerald-800 to-gray-900 dark:from-gray-100 dark:via-emerald-300 dark:to-gray-100 bg-clip-text text-transparent leading-tight px-4">
-              About Me
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-              Building automation-rich, integration-first systems that solve real-world problems
+        {/* Hero Section */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+          <div className="space-y-8">
+            <div>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-6">About Me</h1>
+              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">{about.intro}</p>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Current Focus</h3>
+                <p className="text-gray-600 dark:text-gray-400">{about.currentWork}</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Core Specialization</h3>
+                <p className="text-gray-600 dark:text-gray-400">{about.specialization}</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">AI & Innovation</h3>
+                <p className="text-gray-600 dark:text-gray-400">{about.aiWork}</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Philosophy</h3>
+                <p className="text-gray-600 dark:text-gray-400">{about.philosophy}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-60"></div>
+              <Image
+                src={personal.profileImage || "/placeholder.svg"}
+                alt={personal.name}
+                width={400}
+                height={500}
+                className="relative w-full h-auto rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Workflow Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">How I Work</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              My systematic approach to building scalable SaaS solutions
             </p>
           </div>
 
-          {/* About Narrative */}
-          <section className="mb-32">
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
-              <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.intro}</p>
-
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.currentWork}</p>
-
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.specialization}</p>
-
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.aiWork}</p>
-
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{about.philosophy}</p>
-              </div>
-            </div>
-          </section>
-
-          {/* How I Work Section */}
-          <section className="mb-32">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-gray-100 dark:via-blue-300 dark:to-gray-100 bg-clip-text text-transparent mb-4">
-                How I Work
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                My systematic approach to building scalable, automated solutions
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {workflowSteps.map((step, index) => (
-                <div
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {workflowSteps.map((step, index) => {
+              const IconComponent = getIcon(step.icon)
+              return (
+                <Card
                   key={index}
-                  className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 group hover:scale-105 relative"
+                  className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200">
-                      {getIconComponent(step.icon)}
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{step.title}</h3>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
 
-                  {index < workflowSteps.length - 1 && (
-                    <div className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2">
-                      <ArrowRight className="w-6 h-6 text-gray-400" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
+        {/* Skills Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Technical Expertise</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Technologies and tools I use to build robust, scalable solutions
+            </p>
+          </div>
 
-          {/* Skills Section */}
-          <section className="mb-32">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-gray-900 dark:from-gray-100 dark:via-purple-300 dark:to-gray-100 bg-clip-text text-transparent mb-4">
-                Tech Stack
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Technologies I use to build automation-rich, integration-first systems
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => {
+              const IconComponent = getIcon(category.icon)
+              const colors = getColorClasses(category.color)
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {skillCategories.map((category, categoryIndex) => (
-                <div
-                  key={categoryIndex}
-                  className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 group hover:scale-105"
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-3 mb-6">
+                  <CardContent className="p-6">
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${getColorClasses(category.color).split(" ")[0]} ${getColorClasses(category.color).split(" ")[1]}`}
+                      className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
                     >
-                      {getIconComponent(category.icon)}
+                      <IconComponent className={`w-6 h-6 ${colors.text}`} />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{category.category}</h3>
-                  </div>
+                    <h3 className={`text-xl font-semibold mb-4 ${colors.text}`}>{category.category}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge key={skillIndex} variant="secondary" className="text-xs">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer ${getColorClasses(category.color)}`}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+        {/* Experience Section */}
+        <div className="mb-16">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Work Experience</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Building impactful solutions across diverse industries
+            </p>
+          </div>
 
-          {/* Experience Timeline */}
-          <section className="mb-32">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-cyan-800 to-gray-900 dark:from-gray-100 dark:via-cyan-300 dark:to-gray-100 bg-clip-text text-transparent mb-4">
-                Experience
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                4+ years building scalable systems across multiple industries
-              </p>
-            </div>
+          <div className="space-y-8">
+            {experiences.map((experience, index) => (
+              <Card
+                key={index}
+                className="border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
+              >
+                <CardContent className="p-8">
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-1">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">{experience.company}</h3>
+                      <p className="text-lg font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
+                        {experience.position}
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-2">{experience.duration}</p>
+                      <p className="text-gray-500 dark:text-gray-500">{experience.location}</p>
+                    </div>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="relative">
-                <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-blue-500 to-purple-500 rounded-full shadow-lg"></div>
+                    <div className="lg:col-span-2 space-y-6">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{experience.description}</p>
 
-                <div className="space-y-16">
-                  {experiences.map((experience, index) => (
-                    <div key={experience.id} className="relative flex items-start group">
-                      <div
-                        className={`absolute left-6 w-6 h-6 bg-gradient-to-r ${experience.gradient} rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10`}
-                      ></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Key Achievements</h4>
+                        <ul className="space-y-2">
+                          {experience.achievements.map((achievement, achievementIndex) => (
+                            <li key={achievementIndex} className="flex items-start gap-3">
+                              <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-400">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                      <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
-                        <div className="flex items-start justify-between mb-4">
-                          <div>
-                            <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-                              {experience.position}{" "}
-                              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${experience.gradient}`}>
-                                @{experience.company}
-                              </span>
-                            </h3>
-                            <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-                              <div className="flex items-center gap-2">
-                                <Calendar className="w-4 h-4" />
-                                <span>
-                                  {experience.startDate} - {experience.endDate}
-                                </span>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <MapPin className="w-4 h-4" />
-                                <span>{experience.location}</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            className={`w-12 h-12 bg-gradient-to-r ${experience.gradient} rounded-xl flex items-center justify-center`}
-                          >
-                            {getExperienceIcon(experience.icon)}
-                          </div>
-                        </div>
-
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                          {experience.description}
-                        </p>
-
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Technologies Used</h4>
                         <div className="flex flex-wrap gap-2">
                           {experience.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className={`px-3 py-1 bg-${experience.gradient.split("-")[1]}-100 dark:bg-${experience.gradient.split("-")[1]}-900/30 text-${experience.gradient.split("-")[1]}-800 dark:text-${experience.gradient.split("-")[1]}-300 rounded-full text-sm`}
-                            >
+                            <Badge key={techIndex} variant="outline" className="text-xs">
                               {tech}
-                            </span>
+                            </Badge>
                           ))}
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </main>
 

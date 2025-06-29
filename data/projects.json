@@ -1,150 +1,124 @@
 {
   "projects": [
     {
-      "id": "setupinsaudi",
-      "title": "SetupInSaudi",
-      "subtitle": "Compliance-First SaaS Platform",
-      "description": "Leading development of a B2B SaaS platform automating legal workflows for business setup in Saudi Arabia. Achieved 83 paying clients in the first month post-launch.",
-      "longDescription": "A comprehensive compliance-first SaaS platform that streamlines business setup and payments in KSA. The platform handles everything from document management to government portal monitoring, ensuring full compliance with Saudi regulations.",
-      "image": "/placeholder.svg?height=400&width=600",
-      "liveUrl": "https://www.setupinsaudi.com/",
-      "dashboardUrl": "https://www.dashboard.setupinsaudi.com/",
-      "category": "GovTech",
-      "status": "Live",
-      "timeline": "Oct 2023 - Present",
-      "role": "Full Stack Engineer (Lead)",
-      "impact": {
-        "clients": "83+ paying clients",
-        "revenue": "First month success",
-        "compliance": "100% Saudi compliant"
+      "title": "SetupInSaudi Platform",
+      "description": "A comprehensive SaaS platform for business setup and compliance in Saudi Arabia, featuring automated workflows, payment processing, and government portal integrations.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "technologies": ["Node.js", "React.js", "PostgreSQL", "AWS", "Stripe", "ZATCA API"],
+      "features": [
+        "E-invoicing compliance with ZATCA",
+        "Multi-channel payment processing",
+        "Government portal integrations",
+        "Automated document generation",
+        "Real-time compliance tracking"
+      ],
+      "metrics": {
+        "users": "1000+",
+        "transactions": "$2M+",
+        "uptime": "99.9%"
       },
-      "keyFeatures": [
-        {
-          "icon": "Shield",
-          "title": "E-invoicing Integration",
-          "description": "Automated Saudi e-invoicing with Xero, Marmin, and ZATCA integration"
-        },
-        {
-          "icon": "CreditCard",
-          "title": "Payment System",
-          "description": "Multi-channel billing with Checkout.com, Stripe, and automated tracking"
-        },
-        {
-          "icon": "Zap",
-          "title": "OCR Service",
-          "description": "Google Gemini-powered document processing and data extraction"
-        },
-        {
-          "icon": "BarChart3",
-          "title": "Government Monitoring",
-          "description": "Real-time monitoring of QIWA, MISA, MUQEEM portals with alerting"
-        },
-        {
-          "icon": "FileText",
-          "title": "Document Management",
-          "description": "Automated expiration tracking, classification, and audit trails"
-        },
-        {
-          "icon": "Users",
-          "title": "Employee Management",
-          "description": "Saudization tracking, visa status, and WPS-compliant payroll"
-        }
-      ],
-      "techStack": [
-        "Node.js",
-        "Express.js",
-        "React",
-        "PostgreSQL",
-        "MySQL",
-        "GCP",
-        "Google Cloud Run",
-        "Gemini AI",
-        "Xero API",
-        "HubSpot",
-        "DocuSign",
-        "Checkout.com",
-        "Stripe",
-        "ZATCA",
-        "Marmin",
-        "Sentry",
-        "BullMQ",
-        "Microservices"
-      ],
-      "gradient": "from-emerald-500 to-blue-600",
-      "bgColor": "bg-emerald-50 dark:bg-emerald-900/20"
+      "status": "Live",
+      "link": "#"
     },
     {
-      "id": "preventscripts",
-      "title": "Prevent Scripts",
-      "subtitle": "Digital Health Platform",
-      "description": "Developed backend systems for a digital health platform that raised $5M in seed funding, enabling seamless integration of patient behavior tracking and biometric monitoring.",
-      "longDescription": "Built comprehensive backend infrastructure for a digital health platform focused on preventive care. The system integrates patient behavior tracking, biometric monitoring from mobile applications, and personalized action plans to improve health outcomes.",
-      "image": "/placeholder.svg?height=400&width=600",
-      "liveUrl": "https://www.preventscripts.com/",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.preventscripts.application",
-      "category": "HealthTech",
-      "status": "Live",
-      "timeline": "2023 - 2024",
-      "role": "Backend Developer",
-      "impact": {
-        "funding": "$5M seed funding",
-        "performance": "8s → 900ms API",
-        "efficiency": "Improved workflows"
+      "title": "HR Management SaaS",
+      "description": "Complete HR management solution with employee onboarding, payroll processing, performance tracking, and compliance management.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "technologies": ["Node.js", "React.js", "MongoDB", "Redis", "Docker"],
+      "features": [
+        "Employee lifecycle management",
+        "Automated payroll processing",
+        "Performance evaluation system",
+        "Leave management",
+        "Compliance reporting"
+      ],
+      "metrics": {
+        "employees": "10,000+",
+        "companies": "50+",
+        "automation": "80%"
       },
-      "keyFeatures": [
-        {
-          "icon": "Heart",
-          "title": "Patient Behavior Tracking",
-          "description": "Seamless integration of patient behavior monitoring and analytics"
-        },
-        {
-          "icon": "Activity",
-          "title": "Biometric Monitoring",
-          "description": "Real-time biometric data collection from mobile applications"
-        },
-        {
-          "icon": "FileText",
-          "title": "Personalized Action Plans",
-          "description": "AI-driven personalized health improvement recommendations"
-        },
-        {
-          "icon": "Users",
-          "title": "Provider Tools",
-          "description": "Clinic workflow optimization and patient management systems"
-        },
-        {
-          "icon": "Zap",
-          "title": "API Optimization",
-          "description": "Reduced analytics API response time from 8s to 900ms"
-        },
-        {
-          "icon": "BarChart3",
-          "title": "Healthcare Analytics",
-          "description": "Advanced analytics for improved healthcare delivery efficiency"
-        }
+      "status": "Live",
+      "link": "#"
+    },
+    {
+      "title": "OTA Hotel Booking System",
+      "description": "Online travel agency platform with real-time hotel search, booking management, and payment processing across 2.8M+ properties worldwide.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "technologies": ["Node.js", "React.js", "Redis", "Payment APIs", "Hotel APIs"],
+      "features": [
+        "Real-time hotel search",
+        "Dynamic pricing engine",
+        "Multi-currency support",
+        "Booking management",
+        "Customer support integration"
       ],
-      "techStack": [
-        "Node.js",
-        "Express.js",
-        "React.js",
-        "MySQL",
-        "PostgreSQL",
-        "AWS Lambda",
-        "AWS EC2",
-        "AWS S3",
-        "AWS SES",
-        "GCP",
-        "GCS",
-        "Mailgun",
-        "Gemini",
-        "Sentry",
-        "Stripe",
-        "HubSpot",
-        "DocuSign",
-        "Swagger"
+      "metrics": {
+        "hotels": "2.8M+",
+        "bookings": "50,000+",
+        "countries": "200+"
+      },
+      "status": "Live",
+      "link": "#"
+    },
+    {
+      "title": "Telematics Platform",
+      "description": "Vehicle tracking and fleet management system with real-time GPS monitoring, route optimization, and driver behavior analytics.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "technologies": ["Node.js", "React.js", "MongoDB", "WebSocket", "GPS APIs"],
+      "features": [
+        "Real-time vehicle tracking",
+        "Route optimization",
+        "Driver behavior monitoring",
+        "Fuel consumption analytics",
+        "Maintenance scheduling"
       ],
-      "gradient": "from-red-500 to-pink-600",
-      "bgColor": "bg-red-50 dark:bg-red-900/20"
+      "metrics": {
+        "vehicles": "5,000+",
+        "routes": "100,000+",
+        "efficiency": "25%↑"
+      },
+      "status": "Live",
+      "link": "#"
+    },
+    {
+      "title": "CCMS (Content Management)",
+      "description": "Custom content management system with multi-tenant architecture, role-based permissions, and API-first design.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "technologies": ["Node.js", "React.js", "PostgreSQL", "Redis", "AWS S3"],
+      "features": [
+        "Multi-tenant architecture",
+        "Role-based access control",
+        "API-first design",
+        "Media management",
+        "Version control"
+      ],
+      "metrics": {
+        "tenants": "100+",
+        "content": "1M+ items",
+        "api_calls": "10M+/month"
+      },
+      "status": "Live",
+      "link": "#"
+    },
+    {
+      "title": "Prevent Scripts",
+      "description": "Browser security extension that prevents malicious script execution and protects against XSS attacks with real-time threat detection.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "technologies": ["JavaScript", "Chrome Extension API", "Security APIs"],
+      "features": [
+        "Real-time script analysis",
+        "XSS attack prevention",
+        "Whitelist management",
+        "Security reporting",
+        "Custom rule engine"
+      ],
+      "metrics": {
+        "downloads": "10,000+",
+        "threats_blocked": "50,000+",
+        "rating": "4.8/5"
+      },
+      "status": "Live",
+      "link": "#"
     }
   ]
 }

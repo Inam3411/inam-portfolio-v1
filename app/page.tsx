@@ -2,26 +2,47 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, Linkedin, Download, Code2, Zap, Database } from "lucide-react"
+import {
+  Github,
+  Linkedin,
+  Download,
+  Code2,
+  Zap,
+  Database,
+  Rocket,
+  Users,
+  FileText,
+  Brain,
+  Building2,
+  CreditCard,
+  Hotel,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import Header from "@/components/header"
 import HireMeBadge from "@/components/hire-me-badge"
 import LightbulbIcon from "@/components/lightbulb-icon"
-import { getPersonalInfo, getSocialLinks, getStats } from "@/lib/content"
+import { getPersonalInfo, getSocialLinks, getAchievements } from "@/lib/content"
 
 export default function HomePage() {
   const personal = getPersonalInfo()
   const social = getSocialLinks()
-  const stats = getStats()
+  const achievements = getAchievements()
 
-  const getStatColor = (color: string) => {
-    const colorMap: Record<string, string> = {
-      emerald: "text-emerald-600 dark:text-emerald-400",
-      blue: "text-blue-600 dark:text-blue-400",
-      purple: "text-purple-600 dark:text-purple-400",
-      orange: "text-orange-600 dark:text-orange-400",
+  const getIcon = (iconName: string) => {
+    const iconMap: Record<string, any> = {
+      Code2,
+      Rocket,
+      Users,
+      Zap,
+      FileText,
+      Brain,
+      Building2,
+      CreditCard,
+      Hotel,
     }
-    return colorMap[color] || colorMap.blue
+    const IconComponent = iconMap[iconName] || Code2
+    return IconComponent
   }
 
   return (
@@ -137,21 +158,53 @@ export default function HomePage() {
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className={`text-3xl font-bold ${getStatColor(stat.color)}`}>{stat.value}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+        {/* Achievements Section */}
+        <div className="mt-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              Track Record That Speaks
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Real impact across SaaS platforms, serving thousands of users and processing millions in transactions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievements.map((achievement, index) => {
+              const IconComponent = getIcon(achievement.icon)
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden"
+                >
+                  <CardContent className="p-6">
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${achievement.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="space-y-2">
+                      <div
+                        className={`text-2xl font-bold bg-gradient-to-r ${achievement.gradient} bg-clip-text text-transparent`}
+                      >
+                        {achievement.value}
+                      </div>
+                      <div className="text-gray-700 dark:text-gray-300 font-medium leading-tight">
+                        {achievement.label}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
 
         {/* Console Message */}
-        <div className="mt-16 p-6 bg-gray-900 dark:bg-gray-800 rounded-2xl border border-gray-700">
+        <div className="mt-24 p-6 bg-gray-900 dark:bg-gray-800 rounded-2xl border border-gray-700">
           <div className="flex items-center gap-3 mb-3">
             <div className="flex gap-2">
               <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -161,7 +214,8 @@ export default function HomePage() {
             <span className="text-gray-400 text-sm">console</span>
           </div>
           <code className="text-green-400 font-mono text-sm lg:text-base">
-            console.log("Hey recruiter 👋 scroll down to Projects — that's where the fun starts.");
+            console.log("Hey recruiter 👋 These numbers aren't just metrics — they're real systems serving real
+            users.");
           </code>
         </div>
       </main>

@@ -15,21 +15,69 @@
     "linkedin": "https://linkedin.com/in/mohammad-inamullah",
     "cv": "/cv.pdf"
   },
-  "stats": [
+  "achievements": [
     {
+      "icon": "Code2",
       "value": "4+",
-      "label": "Years Experience",
-      "color": "emerald"
+      "label": "Years Building SaaS Systems",
+      "color": "emerald",
+      "gradient": "from-emerald-500 to-teal-500"
     },
     {
-      "value": "83+",
-      "label": "Paying Clients",
-      "color": "blue"
+      "icon": "Rocket",
+      "value": "6+",
+      "label": "SaaS Platforms Deployed",
+      "color": "blue",
+      "gradient": "from-blue-500 to-cyan-500"
     },
     {
-      "value": "15+",
-      "label": "Integrations Built",
-      "color": "purple"
+      "icon": "Users",
+      "value": "50K+",
+      "label": "Users Supported",
+      "color": "purple",
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "icon": "Zap",
+      "value": "10+",
+      "label": "System Integrations",
+      "color": "orange",
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "icon": "FileText",
+      "value": "E-Invoicing",
+      "label": "with Xero, Marmin, ZATCA",
+      "color": "indigo",
+      "gradient": "from-indigo-500 to-purple-500"
+    },
+    {
+      "icon": "Brain",
+      "value": "AI-powered OCR",
+      "label": "Gemini for Document Automation",
+      "color": "rose",
+      "gradient": "from-rose-500 to-pink-500"
+    },
+    {
+      "icon": "Building2",
+      "value": "Saudi GovTech",
+      "label": "QIWA, Muqeem, MISA Portals",
+      "color": "green",
+      "gradient": "from-green-500 to-emerald-500"
+    },
+    {
+      "icon": "CreditCard",
+      "value": "Multi-Channel",
+      "label": "Stripe, Checkout.com, PayPal",
+      "color": "violet",
+      "gradient": "from-violet-500 to-purple-500"
+    },
+    {
+      "icon": "Hotel",
+      "value": "2.8M Hotels",
+      "label": "OTA Search & Booking System",
+      "color": "amber",
+      "gradient": "from-amber-500 to-orange-500"
     }
   ],
   "about": {

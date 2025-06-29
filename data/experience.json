@@ -1,52 +1,48 @@
 {
   "experiences": [
     {
-      "id": "astrolabs",
       "company": "Astrolabs",
       "position": "Full Stack Engineer",
+      "duration": "2024 - Present",
       "location": "Riyadh, Saudi Arabia",
-      "startDate": "Oct 2023",
-      "endDate": "Present",
-      "description": "Leading backend development for a B2B SaaS platform automating legal workflows for business setup in Saudi Arabia. Built OCR services, government API monitoring, visa/payroll systems, and integrated with Xero, HubSpot, and ZATCA for compliance.",
-      "technologies": ["Node.js", "React", "PostgreSQL", "GCP", "Gemini AI", "Xero", "HubSpot"],
-      "gradient": "from-emerald-400 to-blue-500",
-      "icon": "Building"
+      "description": "Currently working on SetupInSaudi — a compliance-first SaaS platform streamlining business setup and payments in KSA.",
+      "achievements": [
+        "Built a fully compliant e-invoicing and payment service integrated with Xero, Marmin, and ZATCA",
+        "Developed automated billing workflows and real-time invoice tracking systems",
+        "Implemented multi-channel payment processing via Checkout.com and Stripe",
+        "Created an OCR service using Generative AI to extract structured data from documents",
+        "Built systems to track company compliance across multiple Saudi government portals"
+      ],
+      "technologies": ["Node.js", "React.js", "PostgreSQL", "AWS", "Stripe", "Xero API", "ZATCA API", "Generative AI"]
     },
     {
-      "id": "bircube",
       "company": "Bircube",
-      "position": "Backend Developer",
+      "position": "Full Stack Engineer",
+      "duration": "2022 - 2024",
       "location": "Remote",
-      "startDate": "Jul 2022",
-      "endDate": "Sep 2023",
-      "description": "Built AI-powered candidate-job matching system and resume parsing service. Developed backend services for talent platform and hospital inventory management system (CCMS), improving efficiency by 40%.",
-      "technologies": ["Node.js", "NestJS", "TypeScript", "PostgreSQL", "AI/ML"],
-      "gradient": "from-blue-500 to-purple-500",
-      "icon": "Users"
+      "description": "Developed comprehensive SaaS solutions for HR management, travel booking, and business automation.",
+      "achievements": [
+        "Built an HR management platform serving 10,000+ employees",
+        "Developed OTA hotel search and booking system with 2.8M+ hotels",
+        "Created telematics platform for vehicle tracking and fleet management",
+        "Implemented real-time analytics and reporting dashboards",
+        "Integrated multiple payment gateways and third-party APIs"
+      ],
+      "technologies": ["Node.js", "React.js", "MongoDB", "Redis", "Docker", "AWS", "Payment APIs"]
     },
     {
-      "id": "holidayfinds",
-      "company": "HolidayFinds",
-      "position": "Backend Developer",
-      "location": "London, UK",
-      "startDate": "Jun 2021",
-      "endDate": "Jul 2022",
-      "description": "Built hotel search engine with MongoDB advanced search, Redis caching, and OTA integrations. Implemented secure payment gateways and optimized performance for millions of listings.",
-      "technologies": ["Node.js", "MongoDB", "Redis", "AWS", "Stripe"],
-      "gradient": "from-purple-500 to-pink-500",
-      "icon": "Globe"
-    },
-    {
-      "id": "mondoq",
-      "company": "Software Agency",
-      "position": "Backend Developer",
-      "location": "Koblenz, Germany",
-      "startDate": "Jul 2020",
-      "endDate": "May 2021",
-      "description": "Developed backend for a quality management platform (Mondoq), enabling efficient audits, service order tracking, and automated task workflows. Improved operational efficiency by 300% through automation and enhanced communication by 60%.",
-      "technologies": ["Node.js", "Express", "MySQL", "AWS EC2", "AWS S3", "AWS SES", "ClickUp"],
-      "gradient": "from-orange-500 to-red-500",
-      "icon": "BarChart3"
+      "company": "Mondoq",
+      "position": "Full Stack Engineer",
+      "duration": "2021 - 2022",
+      "location": "Remote",
+      "description": "Developed a quality management and service order platform for manufacturing and service industries.",
+      "achievements": [
+        "Built end-to-end quality management workflows",
+        "Developed service order tracking and management system",
+        "Created automated reporting and compliance monitoring",
+        "Implemented role-based access control and audit trails"
+      ],
+      "technologies": ["Node.js", "React.js", "PostgreSQL", "Docker", "CI/CD"]
     }
   ]
 }

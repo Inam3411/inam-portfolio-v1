@@ -23,6 +23,42 @@
       "readTime": "12 min read",
       "publishDate": "2024-01-08",
       "gradient": "from-emerald-500 to-blue-600"
+    },
+    {
+      "title": "Building Compliant E-invoicing Systems for Saudi Arabia",
+      "excerpt": "A deep dive into implementing ZATCA-compliant e-invoicing systems with real-time validation and automated workflows.",
+      "date": "2024-01-15",
+      "readTime": "8 min read",
+      "tags": ["ZATCA", "E-invoicing", "Compliance", "Saudi Arabia"],
+      "image": "/placeholder.svg?height=200&width=300",
+      "slug": "building-compliant-e-invoicing-systems-saudi-arabia"
+    },
+    {
+      "title": "Scaling SaaS Platforms: Lessons from 50K+ Users",
+      "excerpt": "Key insights and architectural decisions that helped scale our HR management platform to serve over 50,000 users.",
+      "date": "2023-11-20",
+      "readTime": "12 min read",
+      "tags": ["SaaS", "Scaling", "Architecture", "Performance"],
+      "image": "/placeholder.svg?height=200&width=300",
+      "slug": "scaling-saas-platforms-lessons-50k-users"
+    },
+    {
+      "title": "AI-Powered Document Processing with Gemini",
+      "excerpt": "How we built an OCR service using Google's Gemini AI to extract structured data from complex business documents.",
+      "date": "2023-09-10",
+      "readTime": "10 min read",
+      "tags": ["AI", "OCR", "Gemini", "Document Processing"],
+      "image": "/placeholder.svg?height=200&width=300",
+      "slug": "ai-powered-document-processing-gemini"
+    },
+    {
+      "title": "Multi-Channel Payment Integration Best Practices",
+      "excerpt": "Strategies for integrating multiple payment providers (Stripe, Checkout.com, PayPal) in a single platform.",
+      "date": "2023-07-05",
+      "readTime": "6 min read",
+      "tags": ["Payments", "Integration", "Stripe", "API"],
+      "image": "/placeholder.svg?height=200&width=300",
+      "slug": "multi-channel-payment-integration-best-practices"
     }
   ]
 }
