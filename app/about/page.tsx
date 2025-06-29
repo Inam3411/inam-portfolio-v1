@@ -224,7 +224,7 @@ export default function AboutPage() {
                           <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                             Full Stack Engineer{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-blue-600">
-                              @SetupInSaudi
+                              @Astrolabs
                             </span>
                           </h3>
                           <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
@@ -274,7 +274,7 @@ export default function AboutPage() {
                           <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                             Backend Developer{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
-                              @Increw
+                              @Bircube
                             </span>
                           </h3>
                           <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
