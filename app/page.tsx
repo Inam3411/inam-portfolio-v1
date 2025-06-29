@@ -128,18 +128,22 @@ export default function HomePage() {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div className="grid grid-cols-4 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
               <div className="text-center">
                 <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">4+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">83+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Paying Clients</div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">6+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">SaaS Platforms</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Integrations Built</div>
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">100K+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Users Supported</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400">3+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">AI Powered Apps</div>
               </div>
             </div>
           </div>
