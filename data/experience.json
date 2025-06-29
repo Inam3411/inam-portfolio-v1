@@ -1,0 +1,52 @@
+{
+  "experiences": [
+    {
+      "id": "astrolabs",
+      "company": "Astrolabs",
+      "position": "Full Stack Engineer",
+      "location": "Riyadh, Saudi Arabia",
+      "startDate": "Oct 2023",
+      "endDate": "Present",
+      "description": "Leading backend development for a B2B SaaS platform automating legal workflows for business setup in Saudi Arabia. Built OCR services, government API monitoring, visa/payroll systems, and integrated with Xero, HubSpot, and ZATCA for compliance.",
+      "technologies": ["Node.js", "React", "PostgreSQL", "GCP", "Gemini AI", "Xero", "HubSpot"],
+      "gradient": "from-emerald-400 to-blue-500",
+      "icon": "Building"
+    },
+    {
+      "id": "bircube",
+      "company": "Bircube",
+      "position": "Backend Developer",
+      "location": "Remote",
+      "startDate": "Jul 2022",
+      "endDate": "Sep 2023",
+      "description": "Built AI-powered candidate-job matching system and resume parsing service. Developed backend services for talent platform and hospital inventory management system (CCMS), improving efficiency by 40%.",
+      "technologies": ["Node.js", "NestJS", "TypeScript", "PostgreSQL", "AI/ML"],
+      "gradient": "from-blue-500 to-purple-500",
+      "icon": "Users"
+    },
+    {
+      "id": "holidayfinds",
+      "company": "HolidayFinds",
+      "position": "Backend Developer",
+      "location": "London, UK",
+      "startDate": "Jun 2021",
+      "endDate": "Jul 2022",
+      "description": "Built hotel search engine with MongoDB advanced search, Redis caching, and OTA integrations. Implemented secure payment gateways and optimized performance for millions of listings.",
+      "technologies": ["Node.js", "MongoDB", "Redis", "AWS", "Stripe"],
+      "gradient": "from-purple-500 to-pink-500",
+      "icon": "Globe"
+    },
+    {
+      "id": "mondoq",
+      "company": "Software Agency",
+      "position": "Backend Developer",
+      "location": "Koblenz, Germany",
+      "startDate": "Jul 2020",
+      "endDate": "May 2021",
+      "description": "Developed backend for a quality management platform (Mondoq), enabling efficient audits, service order tracking, and automated task workflows. Improved operational efficiency by 300% through automation and enhanced communication by 60%.",
+      "technologies": ["Node.js", "Express", "MySQL", "AWS EC2", "AWS S3", "AWS SES", "ClickUp"],
+      "gradient": "from-orange-500 to-red-500",
+      "icon": "BarChart3"
+    }
+  ]
+}

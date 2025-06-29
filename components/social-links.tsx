@@ -1,56 +1,42 @@
-import Link from "next/link"
-import { Twitter, Github, Linkedin } from "lucide-react"
+import { Github, Linkedin, Mail, FileText } from "lucide-react"
 
 export default function SocialLinks() {
   return (
     <div className="flex items-center space-x-4">
-      <Link
-        href="https://twitter.com"
-        className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center text-white hover:bg-blue-500 transition-colors"
-        aria-label="Twitter"
-      >
-        <Twitter className="w-4 h-4" />
-      </Link>
-
-      <Link
-        href="https://github.com"
-        className="w-8 h-8 rounded-full bg-gray-900 flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+      <a
+        href="https://github.com/Inam3411"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 text-gray-600 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors"
         aria-label="GitHub"
       >
-        <Github className="w-4 h-4" />
-      </Link>
-
-      <Link
-        href="https://linkedin.com"
-        className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
+        <Github className="w-5 h-5" />
+      </a>
+      <a
+        href="https://linkedin.com/in/mohammad-inamullah"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 text-gray-600 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors"
         aria-label="LinkedIn"
       >
-        <Linkedin className="w-4 h-4" />
-      </Link>
-
-      <Link
-        href="https://pinterest.com"
-        className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 transition-colors"
-        aria-label="Pinterest"
+        <Linkedin className="w-5 h-5" />
+      </a>
+      <a
+        href="mailto:inamk3411@gmail.com"
+        className="p-2 text-gray-600 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors"
+        aria-label="Email"
       >
-        <span className="text-xs font-bold">P</span>
-      </Link>
-
-      <Link
-        href="https://dribbble.com"
-        className="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-white hover:bg-pink-600 transition-colors"
-        aria-label="Dribbble"
+        <Mail className="w-5 h-5" />
+      </a>
+      <a
+        href="/cv.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 text-gray-600 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors"
+        aria-label="Download CV"
       >
-        <span className="text-xs font-bold">D</span>
-      </Link>
-
-      <Link
-        href="/portfolio"
-        className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-900 transition-colors"
-        aria-label="Portfolio"
-      >
-        <span className="text-xs font-bold">→</span>
-      </Link>
+        <FileText className="w-5 h-5" />
+      </a>
     </div>
   )
 }

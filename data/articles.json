@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "id": "gemini-ocr-automation",
+      "title": "How We Used Gemini to Automate Document Processing",
+      "excerpt": "Building an OCR service with Google Gemini that extracts structured data from documents, reducing manual processing time by 90% at SetupInSaudi.",
+      "content": "At SetupInSaudi, we process hundreds of legal documents daily. Manual data extraction was becoming a bottleneck. Here's how we built an automated OCR service using Google Gemini that transformed our document processing workflow.",
+      "image": "/placeholder.svg?height=300&width=500",
+      "category": "AI/Automation",
+      "tags": ["Gemini", "OCR", "Node.js", "Document Processing"],
+      "readTime": "8 min read",
+      "publishDate": "2024-01-15",
+      "gradient": "from-purple-500 to-pink-600"
+    },
+    {
+      "id": "saudi-visa-systems",
+      "title": "Simplifying Saudi Visa Systems Through Code",
+      "excerpt": "How we built a comprehensive visa management system that handles multiple visa types, automated workflows, and real-time government portal integration.",
+      "content": "Saudi Arabia's visa system is complex, with multiple government portals and varying requirements. We built a unified system that simplifies the entire process for businesses and individuals.",
+      "image": "/placeholder.svg?height=300&width=500",
+      "category": "GovTech",
+      "tags": ["Saudi Arabia", "Government APIs", "Visa Management", "Compliance"],
+      "readTime": "12 min read",
+      "publishDate": "2024-01-08",
+      "gradient": "from-emerald-500 to-blue-600"
+    }
+  ]
+}

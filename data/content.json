@@ -1,0 +1,106 @@
+{
+  "personal": {
+    "name": "Mohammad Inamullah",
+    "title": "Full Stack Engineer",
+    "tagline": "I build SaaS platforms that automate, integrate, and scale.",
+    "description": "With 4+ years across compliance, govtech, HRtech, travel, health, and telematics — I'm currently building AI-powered, payment-compliant systems at SetupInSaudi.",
+    "email": "inamk3411@gmail.com",
+    "phone": "(+966) 0530554894",
+    "location": "Riyadh, Saudi Arabia",
+    "availability": "Available for new opportunities",
+    "profileImage": "/placeholder.svg?height=600&width=500"
+  },
+  "social": {
+    "github": "https://github.com/Inam3411",
+    "linkedin": "https://linkedin.com/in/mohammad-inamullah",
+    "cv": "/cv.pdf"
+  },
+  "stats": [
+    {
+      "value": "4+",
+      "label": "Years Experience",
+      "color": "emerald"
+    },
+    {
+      "value": "83+",
+      "label": "Paying Clients",
+      "color": "blue"
+    },
+    {
+      "value": "15+",
+      "label": "Integrations Built",
+      "color": "purple"
+    }
+  ],
+  "about": {
+    "intro": "I'm a full stack engineer with 4+ years working on B2B and B2C SaaS platforms across industries like govtech (Saudi), HRtech, travel, health, and telematics. I excel in creating backend architectures, integrating systems, managing deployments and monitoring — as well as crafting frontends enriched with user analytics and CMS-powered content.",
+    "currentWork": "Currently working on SetupInSaudi — a compliance-first SaaS platform streamlining business setup and payments in KSA.",
+    "specialization": "A core part of my work is designing and implementing a fully compliant e-invoicing and payment service integrated with Xero, Marmin, and ZATCA — ensuring Saudi government regulations are met seamlessly. This includes automated billing workflows, real-time invoice tracking, and multi-channel payment processing via Checkout.com and Stripe.",
+    "aiWork": "Additionally, I developed an OCR service leveraging Generative AI to extract structured data from documents — along with systems to track company compliance across multiple Saudi government portals.",
+    "philosophy": "I enjoy solving messy real-world problems with structured systems — built to automate, scale, and save time."
+  },
+  "workflowSteps": [
+    {
+      "title": "Understand",
+      "description": "Deep dive into business requirements",
+      "icon": "Target"
+    },
+    {
+      "title": "Architect",
+      "description": "Design scalable system architecture",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Integrate",
+      "description": "Connect systems and APIs seamlessly",
+      "icon": "Code2"
+    },
+    {
+      "title": "Automate",
+      "description": "Build workflows that run themselves",
+      "icon": "Cog"
+    },
+    {
+      "title": "Monitor",
+      "description": "Track performance and reliability",
+      "icon": "BarChart3"
+    },
+    {
+      "title": "Improve",
+      "description": "Iterate based on real-world usage",
+      "icon": "CheckCircle"
+    }
+  ],
+  "skillCategories": [
+    {
+      "category": "Backend",
+      "color": "emerald",
+      "icon": "Code2",
+      "skills": ["Node.js", "NestJS", "Express", "PostgreSQL", "MongoDB", "Redis", "MySQL", "Serverless", "BullMQ"]
+    },
+    {
+      "category": "Frontend",
+      "color": "blue",
+      "icon": "Globe",
+      "skills": ["React.js", "Sanity", "PostHog", "Tailwind CSS", "Ant Design"]
+    },
+    {
+      "category": "AI/Automation",
+      "color": "purple",
+      "icon": "Zap",
+      "skills": ["Gemini", "Generative AI", "LLMs", "OCR"]
+    },
+    {
+      "category": "Integrations",
+      "color": "orange",
+      "icon": "Smartphone",
+      "skills": ["Stripe", "Checkout.com", "HubSpot", "DocuSign", "Xero", "ZATCA", "Marmin"]
+    },
+    {
+      "category": "Infrastructure",
+      "color": "cyan",
+      "icon": "Cloud",
+      "skills": ["AWS", "GCP", "Docker", "CI/CD", "Swagger", "Sentry", "GitHub", "Jira"]
+    }
+  ]
+}
