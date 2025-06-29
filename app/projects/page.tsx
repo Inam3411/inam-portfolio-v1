@@ -17,6 +17,9 @@ import {
   Building,
   Calendar,
   ArrowRight,
+  Heart,
+  Smartphone,
+  Activity,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -99,6 +102,81 @@ export default function ProjectsPage() {
       bgColor: "bg-emerald-50 dark:bg-emerald-900/20",
     },
     {
+      id: "preventscripts",
+      title: "Prevent Scripts",
+      subtitle: "Digital Health Platform",
+      description:
+        "Developed backend systems for a digital health platform that raised $5M in seed funding, enabling seamless integration of patient behavior tracking and biometric monitoring.",
+      longDescription:
+        "Built comprehensive backend infrastructure for a digital health platform focused on preventive care. The system integrates patient behavior tracking, biometric monitoring from mobile applications, and personalized action plans to improve health outcomes.",
+      image: "/placeholder.svg?height=400&width=600",
+      liveUrl: "https://www.preventscripts.com/",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.preventscripts.application",
+      category: "HealthTech",
+      status: "Live",
+      timeline: "2023 - 2024",
+      role: "Backend Developer",
+      impact: {
+        funding: "$5M seed funding",
+        performance: "8s → 900ms API",
+        efficiency: "Improved workflows",
+      },
+      keyFeatures: [
+        {
+          icon: <Heart className="w-5 h-5" />,
+          title: "Patient Behavior Tracking",
+          description: "Seamless integration of patient behavior monitoring and analytics",
+        },
+        {
+          icon: <Activity className="w-5 h-5" />,
+          title: "Biometric Monitoring",
+          description: "Real-time biometric data collection from mobile applications",
+        },
+        {
+          icon: <FileText className="w-5 h-5" />,
+          title: "Personalized Action Plans",
+          description: "AI-driven personalized health improvement recommendations",
+        },
+        {
+          icon: <Users className="w-5 h-5" />,
+          title: "Provider Tools",
+          description: "Clinic workflow optimization and patient management systems",
+        },
+        {
+          icon: <Zap className="w-5 h-5" />,
+          title: "API Optimization",
+          description: "Reduced analytics API response time from 8s to 900ms",
+        },
+        {
+          icon: <BarChart3 className="w-5 h-5" />,
+          title: "Healthcare Analytics",
+          description: "Advanced analytics for improved healthcare delivery efficiency",
+        },
+      ],
+      techStack: [
+        "Node.js",
+        "Express.js",
+        "React.js",
+        "MySQL",
+        "PostgreSQL",
+        "AWS Lambda",
+        "AWS EC2",
+        "AWS S3",
+        "AWS SES",
+        "GCP",
+        "GCS",
+        "Mailgun",
+        "Gemini",
+        "Sentry",
+        "Stripe",
+        "HubSpot",
+        "DocuSign",
+        "Swagger",
+      ],
+      gradient: "from-red-500 to-pink-600",
+      bgColor: "bg-red-50 dark:bg-red-900/20",
+    },
+    {
       id: "increw",
       title: "Increw",
       subtitle: "AI-Powered Talent Platform",
@@ -134,14 +212,58 @@ export default function ProjectsPage() {
           description: "Improved database performance for expensive API operations",
         },
         {
-          icon: <BarChart3 className="w-5 h-5" />,
-          title: "CCMS System",
-          description: "Hospital inventory management with 30% stock accuracy improvement",
+          icon: <Users className="w-5 h-5" />,
+          title: "Talent Matching",
+          description: "Advanced algorithms for connecting talents with companies",
         },
       ],
       techStack: ["Node.js", "NestJS", "Express.js", "TypeScript", "MySQL", "PostgreSQL", "Swagger", "GitHub"],
       gradient: "from-blue-500 to-purple-600",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
+    },
+    {
+      id: "ccms",
+      title: "CCMS",
+      subtitle: "Hospital Inventory Management",
+      description:
+        "Developed a comprehensive hospital inventory management system improving stock accuracy by 30% and streamlining medical supply tracking.",
+      longDescription:
+        "Built a complete hospital inventory management system (CCMS) that automates medical supply tracking, improves stock accuracy, and streamlines hospital operations through efficient resource management.",
+      image: "/placeholder.svg?height=400&width=600",
+      category: "HealthTech",
+      status: "Live",
+      timeline: "2022 - 2023",
+      role: "Backend Developer",
+      impact: {
+        accuracy: "30% stock improvement",
+        automation: "Supply tracking",
+        efficiency: "Streamlined ops",
+      },
+      keyFeatures: [
+        {
+          icon: <BarChart3 className="w-5 h-5" />,
+          title: "Inventory Tracking",
+          description: "Real-time medical supply and equipment tracking system",
+        },
+        {
+          icon: <Database className="w-5 h-5" />,
+          title: "Stock Management",
+          description: "Automated stock level monitoring with 30% accuracy improvement",
+        },
+        {
+          icon: <Zap className="w-5 h-5" />,
+          title: "Resource Allocation",
+          description: "Efficient allocation and distribution of medical resources",
+        },
+        {
+          icon: <FileText className="w-5 h-5" />,
+          title: "Reporting System",
+          description: "Comprehensive reporting for hospital administration",
+        },
+      ],
+      techStack: ["Node.js", "Express.js", "MySQL", "PostgreSQL", "TypeScript"],
+      gradient: "from-teal-500 to-cyan-600",
+      bgColor: "bg-teal-50 dark:bg-teal-900/20",
     },
     {
       id: "holidayfinds",
@@ -345,6 +467,18 @@ export default function ProjectsPage() {
                               >
                                 <BarChart3 className="w-4 h-4" />
                                 Dashboard
+                              </Link>
+                            </Button>
+                          )}
+                          {project.playStoreUrl && (
+                            <Button asChild variant="outline">
+                              <Link
+                                href={project.playStoreUrl}
+                                target="_blank"
+                                className="inline-flex items-center gap-2"
+                              >
+                                <Smartphone className="w-4 h-4" />
+                                Play Store
                               </Link>
                             </Button>
                           )}
