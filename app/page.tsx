@@ -7,8 +7,23 @@ import { Button } from "@/components/ui/button"
 import Header from "@/components/header"
 import HireMeBadge from "@/components/hire-me-badge"
 import LightbulbIcon from "@/components/lightbulb-icon"
+import { getPersonalInfo, getSocialLinks, getStats } from "@/lib/content"
 
 export default function HomePage() {
+  const personal = getPersonalInfo()
+  const social = getSocialLinks()
+  const stats = getStats()
+
+  const getStatColor = (color: string) => {
+    const colorMap: Record<string, string> = {
+      emerald: "text-emerald-600 dark:text-emerald-400",
+      blue: "text-blue-600 dark:text-blue-400",
+      purple: "text-purple-600 dark:text-purple-400",
+      orange: "text-orange-600 dark:text-orange-400",
+    }
+    return colorMap[color] || colorMap.blue
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
       <Header />
@@ -36,8 +51,8 @@ export default function HomePage() {
 
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=600&width=500"
-                  alt="Mohammad Inamullah - Full Stack Engineer"
+                  src={personal.profileImage || "/placeholder.svg"}
+                  alt={`${personal.name} - ${personal.title}`}
                   width={500}
                   height={600}
                   className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800 group-hover:scale-105 transition-transform duration-500"
@@ -56,36 +71,32 @@ export default function HomePage() {
               {/* Greeting */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-medium">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                Available for new opportunities
+                {personal.availability}
               </div>
 
               {/* Name and Title */}
               <div>
                 <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
-                  <span className="text-gray-900 dark:text-gray-100">Mohammad</span>
+                  <span className="text-gray-900 dark:text-gray-100">{personal.name.split(" ")[0]}</span>
                   <br />
                   <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Inamullah
+                    {personal.name.split(" ")[1]}
                   </span>
                 </h1>
 
                 <h2 className="text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-                  Full Stack Engineer
+                  {personal.title}
                 </h2>
               </div>
 
               {/* Tagline */}
               <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-                I build SaaS platforms that{" "}
-                <span className="text-emerald-600 dark:text-emerald-400 font-semibold">automate</span>,{" "}
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">integrate</span>, and{" "}
-                <span className="text-purple-600 dark:text-purple-400 font-semibold">scale</span>.
+                {personal.tagline}
               </p>
 
               {/* Description */}
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                With 4+ years across compliance, govtech, HRtech, travel, health, and telematics — I'm currently
-                building AI-powered, payment-compliant systems at SetupInSaudi.
+                {personal.description}
               </p>
             </div>
 
@@ -96,7 +107,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
               >
-                <Link href="https://github.com/Inam3411" className="inline-flex items-center gap-3">
+                <Link href={social.github} className="inline-flex items-center gap-3">
                   <Github className="w-5 h-5" />
                   GitHub
                 </Link>
@@ -108,7 +119,7 @@ export default function HomePage() {
                 variant="outline"
                 className="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-4 text-lg font-semibold bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
               >
-                <Link href="https://linkedin.com/in/mohammad-inamullah" className="inline-flex items-center gap-3">
+                <Link href={social.linkedin} className="inline-flex items-center gap-3">
                   <Linkedin className="w-5 h-5" />
                   LinkedIn
                 </Link>
@@ -120,7 +131,7 @@ export default function HomePage() {
                 variant="outline"
                 className="border-2 border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 px-8 py-4 text-lg font-semibold bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
               >
-                <Link href="/cv.pdf" className="inline-flex items-center gap-3">
+                <Link href={social.cv} className="inline-flex items-center gap-3">
                   <Download className="w-5 h-5" />
                   Download CV
                 </Link>
@@ -129,18 +140,12 @@ export default function HomePage() {
 
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">4+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">83+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Paying Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Integrations Built</div>
-              </div>
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className={`text-3xl font-bold ${getStatColor(stat.color)}`}>{stat.value}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

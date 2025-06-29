@@ -18,52 +18,43 @@ import {
   Cog,
   BarChart3,
 } from "lucide-react"
+import { getAboutContent, getWorkflowSteps, getSkillCategories, getExperiences, getColorClasses } from "@/lib/content"
 
 export default function AboutPage() {
-  const skillCategories = [
-    {
-      category: "Backend",
-      color:
-        "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
-      icon: <Code2 className="w-4 h-4" />,
-      skills: ["Node.js", "NestJS", "Express", "PostgreSQL", "MongoDB", "Redis", "MySQL", "Serverless", "BullMQ"],
-    },
-    {
-      category: "Frontend",
-      color: "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800",
-      icon: <Globe className="w-4 h-4" />,
-      skills: ["React.js", "Sanity", "PostHog", "Tailwind CSS", "Ant Design"],
-    },
-    {
-      category: "AI/Automation",
-      color:
-        "bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800",
-      icon: <Zap className="w-4 h-4" />,
-      skills: ["Gemini", "Generative AI", "LLMs", "OCR"],
-    },
-    {
-      category: "Integrations",
-      color:
-        "bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 border-orange-200 dark:border-orange-800",
-      icon: <Smartphone className="w-4 h-4" />,
-      skills: ["Stripe", "Checkout.com", "HubSpot", "DocuSign", "Xero", "ZATCA", "Marmin"],
-    },
-    {
-      category: "Infrastructure",
-      color: "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800",
-      icon: <Cloud className="w-4 h-4" />,
-      skills: ["AWS", "GCP", "Docker", "CI/CD", "Swagger", "Sentry", "GitHub", "Jira"],
-    },
-  ]
+  const about = getAboutContent()
+  const workflowSteps = getWorkflowSteps()
+  const skillCategories = getSkillCategories()
+  const experiences = getExperiences()
 
-  const workflowSteps = [
-    { icon: <Target className="w-6 h-6" />, title: "Understand", description: "Deep dive into business requirements" },
-    { icon: <Lightbulb className="w-6 h-6" />, title: "Architect", description: "Design scalable system architecture" },
-    { icon: <Code2 className="w-6 h-6" />, title: "Integrate", description: "Connect systems and APIs seamlessly" },
-    { icon: <Cog className="w-6 h-6" />, title: "Automate", description: "Build workflows that run themselves" },
-    { icon: <BarChart3 className="w-6 h-6" />, title: "Monitor", description: "Track performance and reliability" },
-    { icon: <CheckCircle className="w-6 h-6" />, title: "Improve", description: "Iterate based on real-world usage" },
-  ]
+  const getIconComponent = (iconName: string) => {
+    const iconMap: Record<string, any> = {
+      Target: Target,
+      Lightbulb: Lightbulb,
+      Code2: Code2,
+      Cog: Cog,
+      BarChart3: BarChart3,
+      CheckCircle: CheckCircle,
+      Globe: Globe,
+      Zap: Zap,
+      Smartphone: Smartphone,
+      Cloud: Cloud,
+      Building: Building,
+      Users: Users,
+    }
+    const IconComponent = iconMap[iconName] || Code2
+    return <IconComponent className="w-6 h-6" />
+  }
+
+  const getExperienceIcon = (iconName: string) => {
+    const iconMap: Record<string, any> = {
+      Building: Building,
+      Users: Users,
+      Globe: Globe,
+      BarChart3: BarChart3,
+    }
+    const IconComponent = iconMap[iconName] || Building
+    return <IconComponent className="w-6 h-6 text-white" />
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
@@ -86,38 +77,15 @@ export default function AboutPage() {
           <section className="mb-32">
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
               <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                  I'm a full stack engineer with 4+ years working on B2B and B2C SaaS platforms across industries like
-                  govtech (Saudi), HRtech, travel, health, and telematics. I excel in creating backend architectures,
-                  integrating systems, managing deployments and monitoring — as well as crafting frontends enriched with
-                  user analytics and CMS-powered content.
-                </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.intro}</p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                  Currently working on <strong className="text-emerald-600 dark:text-emerald-400">SetupInSaudi</strong>{" "}
-                  — a compliance-first SaaS platform streamlining business setup and payments in KSA.
-                </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.currentWork}</p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                  A core part of my work is designing and implementing a fully compliant e-invoicing and payment service
-                  integrated with <strong className="text-blue-600 dark:text-blue-400">Xero</strong>,{" "}
-                  <strong className="text-blue-600 dark:text-blue-400">Marmin</strong>, and{" "}
-                  <strong className="text-blue-600 dark:text-blue-400">ZATCA</strong> — ensuring Saudi government
-                  regulations are met seamlessly. This includes automated billing workflows, real-time invoice tracking,
-                  and multi-channel payment processing via Checkout.com and Stripe.
-                </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.specialization}</p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                  Additionally, I developed an OCR service leveraging{" "}
-                  <strong className="text-purple-600 dark:text-purple-400">Generative AI</strong> to extract structured
-                  data from documents — along with systems to track company compliance across multiple Saudi government
-                  portals.
-                </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.aiWork}</p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                  I enjoy solving messy real-world problems with structured systems — built to automate, scale, and save
-                  time.
-                </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{about.philosophy}</p>
               </div>
             </div>
           </section>
@@ -141,7 +109,7 @@ export default function AboutPage() {
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200">
-                      {step.icon}
+                      {getIconComponent(step.icon)}
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{step.title}</h3>
                   </div>
@@ -176,9 +144,9 @@ export default function AboutPage() {
                 >
                   <div className="flex items-center gap-3 mb-6">
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${category.color.split(" ")[0]} ${category.color.split(" ")[1]}`}
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${getColorClasses(category.color).split(" ")[0]} ${getColorClasses(category.color).split(" ")[1]}`}
                     >
-                      {category.icon}
+                      {getIconComponent(category.icon)}
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{category.category}</h3>
                   </div>
@@ -187,7 +155,7 @@ export default function AboutPage() {
                     {category.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer ${category.color}`}
+                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer ${getColorClasses(category.color)}`}
                       >
                         {skill}
                       </span>
@@ -214,200 +182,58 @@ export default function AboutPage() {
                 <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-blue-500 to-purple-500 rounded-full shadow-lg"></div>
 
                 <div className="space-y-16">
-                  {/* SetupInSaudi */}
-                  <div className="relative flex items-start group">
-                    <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10"></div>
+                  {experiences.map((experience, index) => (
+                    <div key={experience.id} className="relative flex items-start group">
+                      <div
+                        className={`absolute left-6 w-6 h-6 bg-gradient-to-r ${experience.gradient} rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10`}
+                      ></div>
 
-                    <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-                            Full Stack Engineer{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-blue-600">
-                              @Astrolabs
-                            </span>
-                          </h3>
-                          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-                            <div className="flex items-center gap-2">
-                              <Calendar className="w-4 h-4" />
-                              <span>Oct 2023 - Present</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w-4 h-4" />
-                              <span>Riyadh, Saudi Arabia</span>
+                      <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
+                        <div className="flex items-start justify-between mb-4">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
+                              {experience.position}{" "}
+                              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${experience.gradient}`}>
+                                @{experience.company}
+                              </span>
+                            </h3>
+                            <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
+                              <div className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4" />
+                                <span>
+                                  {experience.startDate} - {experience.endDate}
+                                </span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <MapPin className="w-4 h-4" />
+                                <span>{experience.location}</span>
+                              </div>
                             </div>
                           </div>
+                          <div
+                            className={`w-12 h-12 bg-gradient-to-r ${experience.gradient} rounded-xl flex items-center justify-center`}
+                          >
+                            {getExperienceIcon(experience.icon)}
+                          </div>
                         </div>
-                        <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl flex items-center justify-center">
-                          <Building className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
 
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Leading backend development for a B2B SaaS platform automating legal workflows for business
-                        setup in Saudi Arabia. Built OCR services, government API monitoring, visa/payroll systems, and
-                        integrated with Xero, HubSpot, and ZATCA for compliance.
-                      </p>
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                          {experience.description}
+                        </p>
 
-                      <div className="flex flex-wrap gap-2">
-                        {["Node.js", "React", "PostgreSQL", "GCP", "Gemini AI", "Xero", "HubSpot"].map(
-                          (tech, index) => (
+                        <div className="flex flex-wrap gap-2">
+                          {experience.technologies.map((tech, techIndex) => (
                             <span
-                              key={index}
-                              className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm"
+                              key={techIndex}
+                              className={`px-3 py-1 bg-${experience.gradient.split("-")[1]}-100 dark:bg-${experience.gradient.split("-")[1]}-900/30 text-${experience.gradient.split("-")[1]}-800 dark:text-${experience.gradient.split("-")[1]}-300 rounded-full text-sm`}
                             >
                               {tech}
                             </span>
-                          ),
-                        )}
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Increw */}
-                  <div className="relative flex items-start group">
-                    <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10"></div>
-
-                    <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-                            Backend Developer{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
-                              @Bircube
-                            </span>
-                          </h3>
-                          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-                            <div className="flex items-center gap-2">
-                              <Calendar className="w-4 h-4" />
-                              <span>Jul 2022 - Sep 2023</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w-4 h-4" />
-                              <span>Remote</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
-                          <Users className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Built AI-powered candidate-job matching system and resume parsing service. Developed backend
-                        services for talent platform and hospital inventory management system (CCMS), improving
-                        efficiency by 40%.
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {["Node.js", "NestJS", "TypeScript", "PostgreSQL", "AI/ML"].map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* HolidayFinds */}
-                  <div className="relative flex items-start group">
-                    <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10"></div>
-
-                    <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-                            Backend Developer{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
-                              @HolidayFinds
-                            </span>
-                          </h3>
-                          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-                            <div className="flex items-center gap-2">
-                              <Calendar className="w-4 h-4" />
-                              <span>Jun 2021 - Jul 2022</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w-4 h-4" />
-                              <span>London, UK</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                          <Globe className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Built hotel search engine with MongoDB advanced search, Redis caching, and OTA integrations.
-                        Implemented secure payment gateways and optimized performance for millions of listings.
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {["Node.js", "MongoDB", "Redis", "AWS", "Stripe"].map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Mondoq */}
-                  <div className="relative flex items-start group">
-                    <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10"></div>
-
-                    <div className="ml-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group-hover:scale-105 w-full">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-                            Backend Developer{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
-                              @Software Agency
-                            </span>
-                          </h3>
-                          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-                            <div className="flex items-center gap-2">
-                              <Calendar className="w-4 h-4" />
-                              <span>Jul 2020 - May 2021</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w-4 h-4" />
-                              <span>Koblenz, Germany</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
-                          <BarChart3 className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Developed backend for a quality management platform (Mondoq), enabling efficient audits, service
-                        order tracking, and automated task workflows. Improved operational efficiency by 300% through
-                        automation and enhanced communication by 60%.
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {["Node.js", "Express", "MySQL", "AWS EC2", "AWS S3", "AWS SES", "ClickUp"].map(
-                          (tech, index) => (
-                            <span
-                              key={index}
-                              className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm"
-                            >
-                              {tech}
-                            </span>
-                          ),
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
