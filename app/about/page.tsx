@@ -94,9 +94,8 @@ export default function AboutPage() {
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                  Currently leading development at{" "}
-                  <strong className="text-emerald-600 dark:text-emerald-400">SetupInSaudi</strong> — a compliance-first
-                  SaaS platform streamlining business setup and payments in KSA.
+                  Currently working on <strong className="text-emerald-600 dark:text-emerald-400">SetupInSaudi</strong>{" "}
+                  — a compliance-first SaaS platform streamlining business setup and payments in KSA.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
