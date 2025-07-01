@@ -1,18 +1,54 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Github, Linkedin, Download, Code2, Zap, Database } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Header from "@/components/header"
-import HireMeBadge from "@/components/hire-me-badge"
-import LightbulbIcon from "@/components/lightbulb-icon"
-import { getPersonalInfo, getSocialLinks, getStats } from "@/lib/content"
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Github,
+  Linkedin,
+  Download,
+  Code2,
+  Zap,
+  Database,
+  Rocket,
+  Users,
+  FileText,
+  Brain,
+  Building2,
+  CreditCard,
+  Hotel,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Header from "@/components/header";
+import HireMeBadge from "@/components/hire-me-badge";
+import LightbulbIcon from "@/components/lightbulb-icon";
+import {
+  getPersonalInfo,
+  getSocialLinks,
+  getAchievements,
+} from "@/lib/content";
+import { Card, CardContent } from "@/components/ui/card";
+// import { getIcon } from "@/lib/utils";
+
+const getIcon = (iconName: string) => {
+  const iconMap: Record<string, any> = {
+    Code2,
+    Rocket,
+    Users,
+    Zap,
+    FileText,
+    Brain,
+    Building2,
+    CreditCard,
+    Hotel,
+  };
+  const IconComponent = iconMap[iconName] || Code2;
+  return IconComponent;
+};
 
 export default function HomePage() {
-  const personal = getPersonalInfo()
-  const social = getSocialLinks()
-  const stats = getStats()
+  const personal = getPersonalInfo();
+  const social = getSocialLinks();
+  const achievements = getAchievements();
 
   const getStatColor = (color: string) => {
     const colorMap: Record<string, string> = {
@@ -20,9 +56,9 @@ export default function HomePage() {
       blue: "text-blue-600 dark:text-blue-400",
       purple: "text-purple-600 dark:text-purple-400",
       orange: "text-orange-600 dark:text-orange-400",
-    }
-    return colorMap[color] || colorMap.blue
-  }
+    };
+    return colorMap[color] || colorMap.blue;
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
@@ -77,7 +113,9 @@ export default function HomePage() {
               {/* Name and Title */}
               <div>
                 <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
-                  <span className="text-gray-900 dark:text-gray-100">{personal.name.split(" ")[0]}</span>
+                  <span className="text-gray-900 dark:text-gray-100">
+                    {personal.name.split(" ")[0]}
+                  </span>
                   <br />
                   <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {personal.name.split(" ")[1]}
@@ -107,7 +145,10 @@ export default function HomePage() {
                 size="lg"
                 className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
               >
-                <Link href={social.github} className="inline-flex items-center gap-3">
+                <Link
+                  href={social.github}
+                  className="inline-flex items-center gap-3"
+                >
                   <Github className="w-5 h-5" />
                   GitHub
                 </Link>
@@ -119,7 +160,10 @@ export default function HomePage() {
                 variant="outline"
                 className="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-4 text-lg font-semibold bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
               >
-                <Link href={social.linkedin} className="inline-flex items-center gap-3">
+                <Link
+                  href={social.linkedin}
+                  className="inline-flex items-center gap-3"
+                >
                   <Linkedin className="w-5 h-5" />
                   LinkedIn
                 </Link>
@@ -131,22 +175,61 @@ export default function HomePage() {
                 variant="outline"
                 className="border-2 border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 px-8 py-4 text-lg font-semibold bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
               >
-                <Link href={social.cv} className="inline-flex items-center gap-3">
+                <Link
+                  href={social.cv}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="inline-flex items-center gap-3"
+                >
                   <Download className="w-5 h-5" />
                   Download CV
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className={`text-3xl font-bold ${getStatColor(stat.color)}`}>{stat.value}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+        {/* Achievements Section */}
+        <div className="mt-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              Track Record That Speaks
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Real impact across SaaS platforms, serving thousands of users and
+              processing millions in transactions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievements.map((achievement, index) => {
+              const IconComponent = getIcon(achievement.icon);
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white dark:bg-gray-800 backdrop-blur-sm overflow-hidden"
+                >
+                  <CardContent className="p-6">
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${achievement.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="space-y-2">
+                      <div
+                        className={`text-2xl font-bold bg-gradient-to-r ${achievement.gradient} bg-clip-text text-transparent`}
+                      >
+                        {achievement.value}
+                      </div>
+                      <div className="text-gray-700 dark:text-gray-300 font-medium leading-tight">
+                        {achievement.label}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
 
@@ -161,7 +244,8 @@ export default function HomePage() {
             <span className="text-gray-400 text-sm">console</span>
           </div>
           <code className="text-green-400 font-mono text-sm lg:text-base">
-            console.log("Hey recruiter 👋 scroll down to Projects — that's where the fun starts.");
+            console.log("Hey recruiter 👋 scroll down to Projects — that's where
+            the fun starts.");
           </code>
         </div>
       </main>
@@ -170,24 +254,34 @@ export default function HomePage() {
       <LightbulbIcon />
 
       <style jsx>{`
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-      }
-      
-      @keyframes float-delayed {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-      }
-      
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-      
-      .animate-float-delayed {
-        animation: float-delayed 3s ease-in-out infinite 1.5s;
-      }
-    `}</style>
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes float-delayed {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+          animation: float-delayed 3s ease-in-out infinite 1.5s;
+        }
+      `}</style>
     </div>
-  )
+  );
 }

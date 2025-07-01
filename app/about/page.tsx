@@ -1,6 +1,6 @@
-import Header from "@/components/header"
-import HireMeBadge from "@/components/hire-me-badge"
-import LightbulbIcon from "@/components/lightbulb-icon"
+import Header from "@/components/header";
+import HireMeBadge from "@/components/hire-me-badge";
+import LightbulbIcon from "@/components/lightbulb-icon";
 import {
   Users,
   Calendar,
@@ -17,14 +17,20 @@ import {
   Lightbulb,
   Cog,
   BarChart3,
-} from "lucide-react"
-import { getAboutContent, getWorkflowSteps, getSkillCategories, getExperiences, getColorClasses } from "@/lib/content"
+} from "lucide-react";
+import {
+  getAboutContent,
+  getWorkflowSteps,
+  getSkillCategories,
+  getExperiences,
+  getColorClasses,
+} from "@/lib/content";
 
 export default function AboutPage() {
-  const about = getAboutContent()
-  const workflowSteps = getWorkflowSteps()
-  const skillCategories = getSkillCategories()
-  const experiences = getExperiences()
+  const about = getAboutContent();
+  const workflowSteps = getWorkflowSteps();
+  const skillCategories = getSkillCategories();
+  const experiences = getExperiences();
 
   const getIconComponent = (iconName: string) => {
     const iconMap: Record<string, any> = {
@@ -40,10 +46,10 @@ export default function AboutPage() {
       Cloud: Cloud,
       Building: Building,
       Users: Users,
-    }
-    const IconComponent = iconMap[iconName] || Code2
-    return <IconComponent className="w-6 h-6" />
-  }
+    };
+    const IconComponent = iconMap[iconName] || Code2;
+    return <IconComponent className="w-6 h-6" />;
+  };
 
   const getExperienceIcon = (iconName: string) => {
     const iconMap: Record<string, any> = {
@@ -51,10 +57,10 @@ export default function AboutPage() {
       Users: Users,
       Globe: Globe,
       BarChart3: BarChart3,
-    }
-    const IconComponent = iconMap[iconName] || Building
-    return <IconComponent className="w-6 h-6 text-white" />
-  }
+    };
+    const IconComponent = iconMap[iconName] || Building;
+    return <IconComponent className="w-6 h-6 text-white" />;
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
@@ -69,7 +75,8 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-              Building automation-rich, integration-first systems that solve real-world problems
+              Building automation-rich, integration-first systems that solve
+              real-world problems
             </p>
           </div>
 
@@ -77,15 +84,25 @@ export default function AboutPage() {
           <section className="mb-32">
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
               <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.intro}</p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                  {about.intro}
+                </p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.currentWork}</p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                  {about.currentWork}
+                </p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.specialization}</p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                  {about.specialization}
+                </p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">{about.aiWork}</p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                  {about.aiWork}
+                </p>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{about.philosophy}</p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                  {about.philosophy}
+                </p>
               </div>
             </div>
           </section>
@@ -111,9 +128,13 @@ export default function AboutPage() {
                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200">
                       {getIconComponent(step.icon)}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{step.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+                      {step.title}
+                    </h3>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {step.description}
+                  </p>
 
                   {index < workflowSteps.length - 1 && (
                     <div className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2">
@@ -132,7 +153,8 @@ export default function AboutPage() {
                 Tech Stack
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Technologies I use to build automation-rich, integration-first systems
+                Technologies I use to build automation-rich, integration-first
+                systems
               </p>
             </div>
 
@@ -144,22 +166,29 @@ export default function AboutPage() {
                 >
                   <div className="flex items-center gap-3 mb-6">
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${getColorClasses(category.color).split(" ")[0]} ${getColorClasses(category.color).split(" ")[1]}`}
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                        getColorClasses(category.color).split(" ")[0]
+                      } ${getColorClasses(category.color).split(" ")[1]}`}
                     >
                       {getIconComponent(category.icon)}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{category.category}</h3>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                      {category.category}
+                    </h3>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer ${getColorClasses(category.color)}`}
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    {category.skills.map((skill, skillIndex) => {
+                      const colorClasses = getColorClasses(category.color);
+                      return (
+                        <span
+                          key={skillIndex}
+                          className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer ${colorClasses}`}
+                        >
+                          {skill}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
@@ -183,7 +212,10 @@ export default function AboutPage() {
 
                 <div className="space-y-16">
                   {experiences.map((experience, index) => (
-                    <div key={experience.id} className="relative flex items-start group">
+                    <div
+                      key={experience.id}
+                      className="relative flex items-start group"
+                    >
                       <div
                         className={`absolute left-6 w-6 h-6 bg-gradient-to-r ${experience.gradient} rounded-full border-4 border-white dark:border-gray-900 shadow-lg group-hover:scale-125 transition-transform duration-200 z-10`}
                       ></div>
@@ -193,7 +225,9 @@ export default function AboutPage() {
                           <div>
                             <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                               {experience.position}{" "}
-                              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${experience.gradient}`}>
+                              <span
+                                className={`text-transparent bg-clip-text bg-gradient-to-r ${experience.gradient}`}
+                              >
                                 @{experience.company}
                               </span>
                             </h3>
@@ -225,7 +259,15 @@ export default function AboutPage() {
                           {experience.technologies.map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className={`px-3 py-1 bg-${experience.gradient.split("-")[1]}-100 dark:bg-${experience.gradient.split("-")[1]}-900/30 text-${experience.gradient.split("-")[1]}-800 dark:text-${experience.gradient.split("-")[1]}-300 rounded-full text-sm`}
+                              className={`px-3 py-1 bg-${
+                                experience.gradient.split("-")[1]
+                              }-100 dark:bg-${
+                                experience.gradient.split("-")[1]
+                              }-900/30 text-${
+                                experience.gradient.split("-")[1]
+                              }-800 dark:text-${
+                                experience.gradient.split("-")[1]
+                              }-300 rounded-full text-sm`}
                             >
                               {tech}
                             </span>
@@ -244,5 +286,5 @@ export default function AboutPage() {
       <HireMeBadge />
       <LightbulbIcon />
     </div>
-  )
+  );
 }

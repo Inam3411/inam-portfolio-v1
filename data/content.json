@@ -8,12 +8,12 @@
     "phone": "(+966) 0530554894",
     "location": "Riyadh, Saudi Arabia",
     "availability": "Available for new opportunities",
-    "profileImage": "/placeholder.svg?height=600&width=500"
+    "profileImage": "/static/profile.png"
   },
   "social": {
     "github": "https://github.com/Inam3411",
-    "linkedin": "https://linkedin.com/in/mohammad-inamullah",
-    "cv": "/cv.pdf"
+    "linkedin": "https://www.linkedin.com/in/mohammad-inamullah-4408341ba/",
+    "cv": "/static/Inam-CV.pdf"
   },
   "stats": [
     {
@@ -30,6 +30,71 @@
       "value": "15+",
       "label": "Integrations Built",
       "color": "purple"
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "Code2",
+      "value": "4+",
+      "label": "Years Building SaaS Systems",
+      "color": "emerald",
+      "gradient": "from-emerald-500 to-teal-500"
+    },
+    {
+      "icon": "Rocket",
+      "value": "6+",
+      "label": "SaaS Platforms Deployed",
+      "color": "blue",
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "icon": "Users",
+      "value": "50K+",
+      "label": "Users Supported",
+      "color": "purple",
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "icon": "Zap",
+      "value": "10+",
+      "label": "System Integrations",
+      "color": "orange",
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "icon": "FileText",
+      "value": "E-Invoicing",
+      "label": "with Xero, Marmin, ZATCA",
+      "color": "indigo",
+      "gradient": "from-indigo-500 to-purple-500"
+    },
+    {
+      "icon": "Brain",
+      "value": "AI-powered OCR",
+      "label": "Gemini for Document Automation",
+      "color": "rose",
+      "gradient": "from-rose-500 to-pink-500"
+    },
+    {
+      "icon": "Building2",
+      "value": "Saudi GovTech",
+      "label": "QIWA, Muqeem, MISA Portals",
+      "color": "green",
+      "gradient": "from-green-500 to-emerald-500"
+    },
+    {
+      "icon": "CreditCard",
+      "value": "Multi-Channel",
+      "label": "Stripe, Checkout.com, PayPal",
+      "color": "violet",
+      "gradient": "from-violet-500 to-purple-500"
+    },
+    {
+      "icon": "Hotel",
+      "value": "2.8M Hotels",
+      "label": "OTA Search & Booking System",
+      "color": "amber",
+      "gradient": "from-amber-500 to-orange-500"
     }
   ],
   "about": {
@@ -76,7 +141,17 @@
       "category": "Backend",
       "color": "emerald",
       "icon": "Code2",
-      "skills": ["Node.js", "NestJS", "Express", "PostgreSQL", "MongoDB", "Redis", "MySQL", "Serverless", "BullMQ"]
+      "skills": [
+        "Node.js",
+        "NestJS",
+        "Express",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "MySQL",
+        "Serverless",
+        "BullMQ"
+      ]
     },
     {
       "category": "Frontend",
@@ -94,13 +169,30 @@
       "category": "Integrations",
       "color": "orange",
       "icon": "Smartphone",
-      "skills": ["Stripe", "Checkout.com", "HubSpot", "DocuSign", "Xero", "ZATCA", "Marmin"]
+      "skills": [
+        "Stripe",
+        "Checkout.com",
+        "HubSpot",
+        "DocuSign",
+        "Xero",
+        "ZATCA",
+        "Marmin"
+      ]
     },
     {
       "category": "Infrastructure",
       "color": "cyan",
       "icon": "Cloud",
-      "skills": ["AWS", "GCP", "Docker", "CI/CD", "Swagger", "Sentry", "GitHub", "Jira"]
+      "skills": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "CI/CD",
+        "Swagger",
+        "Sentry",
+        "GitHub",
+        "Jira"
+      ]
     }
   ]
 }

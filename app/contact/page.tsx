@@ -1,12 +1,12 @@
-import Header from "@/components/header"
-import HireMeBadge from "@/components/hire-me-badge"
-import LightbulbIcon from "@/components/lightbulb-icon"
-import { Mail, Phone, MapPin, Github, Linkedin, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import Link from "next/link"
+import Header from "@/components/header";
+import HireMeBadge from "@/components/hire-me-badge";
+import LightbulbIcon from "@/components/lightbulb-icon";
+import { Mail, Phone, MapPin, Github, Linkedin, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -22,8 +22,8 @@ export default function ContactPage() {
               Let's Connect
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-              Ready to build your next automation-rich, integration-first system? Let's discuss how I can help scale
-              your business.
+              Ready to build your next automation-rich, integration-first
+              system? Let's discuss how I can help scale your business.
             </p>
           </div>
 
@@ -31,7 +31,9 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Get In Touch</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">
+                  Get In Touch
+                </h2>
 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
@@ -39,8 +41,12 @@ export default function ContactPage() {
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">inamk3411@gmail.com</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Email
+                      </p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        inamk3411@gmail.com
+                      </p>
                     </div>
                   </div>
 
@@ -49,8 +55,12 @@ export default function ContactPage() {
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">(+966) 0530554894</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Phone
+                      </p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        (+966) 0530554894
+                      </p>
                     </div>
                   </div>
 
@@ -59,14 +69,20 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Riyadh, Saudi Arabia</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Location
+                      </p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        Riyadh, Saudi Arabia
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">Connect With Me</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                    Connect With Me
+                  </h3>
                   <div className="flex gap-4">
                     <Button
                       asChild
@@ -95,7 +111,13 @@ export default function ContactPage() {
                     </Button>
 
                     <Button asChild size="lg" variant="outline">
-                      <Link href="/cv.pdf" className="inline-flex items-center gap-2">
+                      <Link
+                        href="/static/Inam-CV.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                        className="inline-flex items-center gap-2"
+                      >
                         <Download className="w-5 h-5" />
                         CV
                       </Link>
@@ -107,12 +129,17 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Send a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">
+                Send a Message
+              </h2>
 
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="firstName" className="text-gray-700 dark:text-gray-300">
+                    <Label
+                      htmlFor="firstName"
+                      className="text-gray-700 dark:text-gray-300"
+                    >
                       First Name
                     </Label>
                     <Input
@@ -122,7 +149,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="lastName" className="text-gray-700 dark:text-gray-300">
+                    <Label
+                      htmlFor="lastName"
+                      className="text-gray-700 dark:text-gray-300"
+                    >
                       Last Name
                     </Label>
                     <Input
@@ -134,7 +164,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">
+                  <Label
+                    htmlFor="email"
+                    className="text-gray-700 dark:text-gray-300"
+                  >
                     Email
                   </Label>
                   <Input
@@ -146,7 +179,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <Label htmlFor="company" className="text-gray-700 dark:text-gray-300">
+                  <Label
+                    htmlFor="company"
+                    className="text-gray-700 dark:text-gray-300"
+                  >
                     Company (Optional)
                   </Label>
                   <Input
@@ -157,7 +193,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <Label htmlFor="subject" className="text-gray-700 dark:text-gray-300">
+                  <Label
+                    htmlFor="subject"
+                    className="text-gray-700 dark:text-gray-300"
+                  >
                     Subject
                   </Label>
                   <Input
@@ -168,7 +207,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="text-gray-700 dark:text-gray-300">
+                  <Label
+                    htmlFor="message"
+                    className="text-gray-700 dark:text-gray-300"
+                  >
                     Message
                   </Label>
                   <Textarea
@@ -197,8 +239,9 @@ export default function ContactPage() {
                 Let's Build Your Next Product
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-                From backend architectures to frontend experiences, I'll help you build systems that automate,
-                integrate, and scale — front to back.
+                From backend architectures to frontend experiences, I'll help
+                you build systems that automate, integrate, and scale — front to
+                back.
               </p>
               <div className="text-lg text-gray-700 dark:text-gray-300">
                 <strong>Response Time:</strong> Usually within 24 hours
@@ -211,5 +254,5 @@ export default function ContactPage() {
       <HireMeBadge />
       <LightbulbIcon />
     </div>
-  )
+  );
 }

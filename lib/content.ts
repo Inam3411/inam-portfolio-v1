@@ -1,24 +1,37 @@
-import contentData from "@/data/content.json"
-import experienceData from "@/data/experience.json"
-import projectsData from "@/data/projects.json"
-import articlesData from "@/data/articles.json"
+import contentData from "@/data/content.json";
+import experienceData from "@/data/experience.json";
+import projectsData from "@/data/projects.json";
+import articlesData from "@/data/articles.json";
 
-export const getPersonalInfo = () => contentData.personal
-export const getSocialLinks = () => contentData.social
-export const getStats = () => contentData.stats
-export const getAboutContent = () => contentData.about
-export const getWorkflowSteps = () => contentData.workflowSteps
-export const getSkillCategories = () => contentData.skillCategories
+export interface Achievement {
+  icon: string;
+  value: string;
+  label: string;
+  color: string;
+  gradient: string;
+}
 
-export const getExperiences = () => experienceData.experiences
-export const getProjects = () => projectsData.projects
-export const getArticles = () => articlesData.articles
+export const getPersonalInfo = () => contentData.personal;
+export const getSocialLinks = () => contentData.social;
+export const getStats = () => contentData.stats;
+export const getAboutContent = () => contentData.about;
+export const getWorkflowSteps = () => contentData.workflowSteps;
+export const getSkillCategories = () => contentData.skillCategories;
 
-export const getProjectById = (id: string) => projectsData.projects.find((project) => project.id === id)
+export const getExperiences = () => experienceData.experiences;
+export const getProjects = () => projectsData.projects;
+export const getArticles = () => articlesData.articles;
 
-export const getArticleById = (id: string) => articlesData.articles.find((article) => article.id === id)
+export const getProjectById = (id: string) =>
+  projectsData.projects.find((project) => project.id === id);
 
-export const getExperienceById = (id: string) => experienceData.experiences.find((experience) => experience.id === id)
+export const getArticleById = (id: string) =>
+  articlesData.articles.find((article) => article.id === id);
+
+export const getExperienceById = (id: string) =>
+  experienceData.experiences.find((experience) => experience.id === id);
+
+export const getAchievements = (): Achievement[] => contentData.achievements;
 
 // Helper function to get color classes
 export const getColorClasses = (color: string) => {
@@ -31,9 +44,9 @@ export const getColorClasses = (color: string) => {
     orange:
       "bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 border-orange-200 dark:border-orange-800",
     cyan: "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800",
-  }
-  return colorMap[color] || colorMap.blue
-}
+  };
+  return colorMap[color] || colorMap.blue;
+};
 
 // Helper function to get icon component
 export const getIconComponent = (iconName: string) => {
@@ -51,6 +64,6 @@ export const getIconComponent = (iconName: string) => {
     Cloud: "Cloud",
     Building: "Building",
     Users: "Users",
-  }
-  return iconMap[iconName] || "Code2"
-}
+  };
+  return iconMap[iconName] || "Code2";
+};
