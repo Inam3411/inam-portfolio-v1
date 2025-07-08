@@ -1,8 +1,8 @@
-import Header from "@/components/header"
-import HireMeBadge from "@/components/hire-me-badge"
-import LightbulbIcon from "@/components/lightbulb-icon"
-import Image from "next/image"
-import Link from "next/link"
+import Header from "@/components/header";
+import HireMeBadge from "@/components/hire-me-badge";
+import LightbulbIcon from "@/components/lightbulb-icon";
+import Image from "next/image";
+import Link from "next/link";
 import {
   ExternalLink,
   Database,
@@ -20,9 +20,9 @@ import {
   Heart,
   Smartphone,
   Activity,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function ProjectsPage() {
   const projects = [
@@ -50,32 +50,38 @@ export default function ProjectsPage() {
         {
           icon: <Shield className="w-5 h-5" />,
           title: "E-invoicing Integration",
-          description: "Automated Saudi e-invoicing with Xero, Marmin, and ZATCA integration",
+          description:
+            "Automated Saudi e-invoicing with Xero, Marmin, and ZATCA integration",
         },
         {
           icon: <CreditCard className="w-5 h-5" />,
           title: "Payment System",
-          description: "Multi-channel billing with Checkout.com, Stripe, and automated tracking",
+          description:
+            "Multi-channel billing with Checkout.com, Stripe, and automated tracking",
         },
         {
           icon: <Zap className="w-5 h-5" />,
           title: "OCR Service",
-          description: "Google Gemini-powered document processing and data extraction",
+          description:
+            "Google Gemini-powered document processing and data extraction",
         },
         {
           icon: <BarChart3 className="w-5 h-5" />,
           title: "Government Monitoring",
-          description: "Real-time monitoring of QIWA, MISA, MUQEEM portals with alerting",
+          description:
+            "Real-time monitoring of QIWA, MISA, MUQEEM portals with alerting",
         },
         {
           icon: <FileText className="w-5 h-5" />,
           title: "Document Management",
-          description: "Automated expiration tracking, classification, and audit trails",
+          description:
+            "Automated expiration tracking, classification, and audit trails",
         },
         {
           icon: <Users className="w-5 h-5" />,
           title: "Employee Management",
-          description: "Saudization tracking, visa status, and WPS-compliant payroll",
+          description:
+            "Saudization tracking, visa status, and WPS-compliant payroll",
         },
       ],
       techStack: [
@@ -111,7 +117,8 @@ export default function ProjectsPage() {
         "Built comprehensive backend infrastructure for a digital health platform focused on preventive care. The system integrates patient behavior tracking, biometric monitoring from mobile applications, and personalized action plans to improve health outcomes.",
       image: "/placeholder.svg?height=400&width=600",
       liveUrl: "https://www.preventscripts.com/",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.preventscripts.application",
+      playStoreUrl:
+        "https://play.google.com/store/apps/details?id=com.preventscripts.application",
       category: "HealthTech",
       status: "Live",
       timeline: "2023 - 2024",
@@ -125,22 +132,26 @@ export default function ProjectsPage() {
         {
           icon: <Heart className="w-5 h-5" />,
           title: "Patient Behavior Tracking",
-          description: "Seamless integration of patient behavior monitoring and analytics",
+          description:
+            "Seamless integration of patient behavior monitoring and analytics",
         },
         {
           icon: <Activity className="w-5 h-5" />,
           title: "Biometric Monitoring",
-          description: "Real-time biometric data collection from mobile applications",
+          description:
+            "Real-time biometric data collection from mobile applications",
         },
         {
           icon: <FileText className="w-5 h-5" />,
           title: "Personalized Action Plans",
-          description: "AI-driven personalized health improvement recommendations",
+          description:
+            "AI-driven personalized health improvement recommendations",
         },
         {
           icon: <Users className="w-5 h-5" />,
           title: "Provider Tools",
-          description: "Clinic workflow optimization and patient management systems",
+          description:
+            "Clinic workflow optimization and patient management systems",
         },
         {
           icon: <Zap className="w-5 h-5" />,
@@ -150,7 +161,8 @@ export default function ProjectsPage() {
         {
           icon: <BarChart3 className="w-5 h-5" />,
           title: "Healthcare Analytics",
-          description: "Advanced analytics for improved healthcare delivery efficiency",
+          description:
+            "Advanced analytics for improved healthcare delivery efficiency",
         },
       ],
       techStack: [
@@ -199,25 +211,38 @@ export default function ProjectsPage() {
         {
           icon: <Zap className="w-5 h-5" />,
           title: "AI Matching Engine",
-          description: "Automated candidate-job matching with 40% efficiency improvement",
+          description:
+            "Automated candidate-job matching with 40% efficiency improvement",
         },
         {
           icon: <FileText className="w-5 h-5" />,
           title: "Resume Parser",
-          description: "AI-powered resume parsing for automated profile building",
+          description:
+            "AI-powered resume parsing for automated profile building",
         },
         {
           icon: <Database className="w-5 h-5" />,
           title: "Query Optimization",
-          description: "Improved database performance for expensive API operations",
+          description:
+            "Improved database performance for expensive API operations",
         },
         {
           icon: <Users className="w-5 h-5" />,
           title: "Talent Matching",
-          description: "Advanced algorithms for connecting talents with companies",
+          description:
+            "Advanced algorithms for connecting talents with companies",
         },
       ],
-      techStack: ["Node.js", "NestJS", "Express.js", "TypeScript", "MySQL", "PostgreSQL", "Swagger", "GitHub"],
+      techStack: [
+        "Node.js",
+        "NestJS",
+        "Express.js",
+        "TypeScript",
+        "MySQL",
+        "PostgreSQL",
+        "Swagger",
+        "GitHub",
+      ],
       gradient: "from-blue-500 to-purple-600",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
     },
@@ -248,12 +273,14 @@ export default function ProjectsPage() {
         {
           icon: <Database className="w-5 h-5" />,
           title: "Stock Management",
-          description: "Automated stock level monitoring with 30% accuracy improvement",
+          description:
+            "Automated stock level monitoring with 30% accuracy improvement",
         },
         {
           icon: <Zap className="w-5 h-5" />,
           title: "Resource Allocation",
-          description: "Efficient allocation and distribution of medical resources",
+          description:
+            "Efficient allocation and distribution of medical resources",
         },
         {
           icon: <FileText className="w-5 h-5" />,
@@ -288,12 +315,14 @@ export default function ProjectsPage() {
         {
           icon: <Search className="w-5 h-5" />,
           title: "Advanced Search",
-          description: "MongoDB-powered search with filtering, sorting, and pagination",
+          description:
+            "MongoDB-powered search with filtering, sorting, and pagination",
         },
         {
           icon: <Globe className="w-5 h-5" />,
           title: "OTA Integrations",
-          description: "Real-time hotel inventory and pricing from multiple sources",
+          description:
+            "Real-time hotel inventory and pricing from multiple sources",
         },
         {
           icon: <Database className="w-5 h-5" />,
@@ -306,7 +335,17 @@ export default function ProjectsPage() {
           description: "Secure Stripe and PayPal integration for bookings",
         },
       ],
-      techStack: ["Node.js", "Express", "TypeScript", "MongoDB", "Redis", "AWS S3", "AWS SES", "AWS EC2", "Stripe"],
+      techStack: [
+        "Node.js",
+        "Express",
+        "TypeScript",
+        "MongoDB",
+        "Redis",
+        "AWS S3",
+        "AWS SES",
+        "AWS EC2",
+        "Stripe",
+      ],
       gradient: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50 dark:bg-purple-900/20",
     },
@@ -351,11 +390,19 @@ export default function ProjectsPage() {
           description: "Comprehensive document management and tracking system",
         },
       ],
-      techStack: ["Node.js", "Express", "MySQL", "AWS EC2", "AWS S3", "AWS SES", "ClickUp"],
+      techStack: [
+        "Node.js",
+        "Express",
+        "MySQL",
+        "AWS EC2",
+        "AWS S3",
+        "AWS SES",
+        "ClickUp",
+      ],
       gradient: "from-orange-500 to-red-600",
       bgColor: "bg-orange-50 dark:bg-orange-900/20",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
@@ -370,8 +417,8 @@ export default function ProjectsPage() {
               Projects
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-              Real-world systems that automate operations, integrate ecosystems, and scale businesses across multiple
-              industries
+              Real-world systems that automate operations, integrate ecosystems,
+              and scale businesses across multiple industries
             </p>
           </div>
 
@@ -384,7 +431,9 @@ export default function ProjectsPage() {
                   className={`${project.bgColor} rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm`}
                 >
                   <div
-                    className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                    className={`grid lg:grid-cols-2 gap-12 items-center ${
+                      index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                    }`}
                   >
                     {/* Content */}
                     <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -398,7 +447,10 @@ export default function ProjectsPage() {
                             >
                               {project.category}
                             </Badge>
-                            <Badge variant="outline" className="text-green-600 border-green-600">
+                            <Badge
+                              variant="outline"
+                              className="text-green-600 border-green-600"
+                            >
                               {project.status}
                             </Badge>
                           </div>
@@ -431,18 +483,23 @@ export default function ProjectsPage() {
 
                         {/* Impact Metrics */}
                         <div className="grid grid-cols-3 gap-4">
-                          {Object.entries(project.impact).map(([key, value]) => (
-                            <div key={key} className="text-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+                          {Object.entries(project.impact).map(
+                            ([key, value]) => (
                               <div
-                                className={`text-2xl font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}
+                                key={key}
+                                className="text-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl"
                               >
-                                {value.split(" ")[0]}
+                                <div
+                                  className={`text-2xl font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}
+                                >
+                                  {value.split(" ")[0]}
+                                </div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400 capitalize">
+                                  {value.split(" ").slice(1).join(" ") || key}
+                                </div>
                               </div>
-                              <div className="text-sm text-gray-600 dark:text-gray-400 capitalize">
-                                {value.split(" ").slice(1).join(" ") || key}
-                              </div>
-                            </div>
-                          ))}
+                            )
+                          )}
                         </div>
 
                         {/* Action Buttons */}
@@ -452,13 +509,17 @@ export default function ProjectsPage() {
                               asChild
                               className={`bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white shadow-lg`}
                             >
-                              <Link href={project.liveUrl} target="_blank" className="inline-flex items-center gap-2">
+                              <Link
+                                href={project.liveUrl}
+                                target="_blank"
+                                className="inline-flex items-center gap-2"
+                              >
                                 <ExternalLink className="w-4 h-4" />
                                 View Live
                               </Link>
                             </Button>
                           )}
-                          {project.dashboardUrl && (
+                          {/* {project.dashboardUrl && (
                             <Button asChild variant="outline">
                               <Link
                                 href={project.dashboardUrl}
@@ -469,7 +530,7 @@ export default function ProjectsPage() {
                                 Dashboard
                               </Link>
                             </Button>
-                          )}
+                          )} */}
                           {project.playStoreUrl && (
                             <Button asChild variant="outline">
                               <Link
@@ -507,7 +568,9 @@ export default function ProjectsPage() {
 
                   {/* Key Features */}
                   <div className="mt-12">
-                    <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">Key Features</h4>
+                    <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
+                      Key Features
+                    </h4>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {project.keyFeatures.map((feature, featureIndex) => (
                         <div
@@ -532,7 +595,9 @@ export default function ProjectsPage() {
 
                   {/* Tech Stack */}
                   <div className="mt-12">
-                    <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Tech Stack</h4>
+                    <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                      Tech Stack
+                    </h4>
                     <div className="flex flex-wrap gap-3">
                       {project.techStack.map((tech, techIndex) => (
                         <span
@@ -556,15 +621,18 @@ export default function ProjectsPage() {
                 Let's Build Something Amazing
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-                Ready to automate your operations and scale your business? Let's discuss how I can help build your next
-                system.
+                Ready to automate your operations and scale your business? Let's
+                discuss how I can help build your next system.
               </p>
               <Button
                 asChild
                 size="lg"
                 className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
               >
-                <Link href="/contact" className="inline-flex items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3"
+                >
                   Get In Touch
                   <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -577,5 +645,5 @@ export default function ProjectsPage() {
       <HireMeBadge />
       <LightbulbIcon />
     </div>
-  )
+  );
 }
