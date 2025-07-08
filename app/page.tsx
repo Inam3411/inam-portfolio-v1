@@ -244,8 +244,8 @@ export default function HomePage() {
             <span className="text-gray-400 text-sm">console</span>
           </div>
           <code className="text-green-400 font-mono text-sm lg:text-base">
-            console.log("Hey recruiter 👋 scroll down to Projects — that's where
-            the fun starts.");
+            console.log("Hey there 👋 scroll down to Projects — that's where the
+            fun starts.");
           </code>
         </div>
       </main>
