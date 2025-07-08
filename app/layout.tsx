@@ -48,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/static/profile.png" type="image/png" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
