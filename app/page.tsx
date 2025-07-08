@@ -197,8 +197,8 @@ export default function HomePage() {
               Track Record That Speaks
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Real impact across SaaS platforms, serving thousands of users and
-              processing millions in transactions
+              Real impact across SaaS platforms — built for scale, resilience,
+              and usage by thousands of users across sectors.
             </p>
           </div>
 
