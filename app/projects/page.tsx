@@ -40,7 +40,7 @@ export default function ProjectsPage() {
       category: "GovTech",
       status: "Live",
       timeline: "Oct 2023 - Present",
-      role: "Full Stack Engineer (Lead)",
+      role: "Full Stack Engineer",
       impact: {
         clients: "83+ paying clients",
         revenue: "First month success",
