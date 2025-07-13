@@ -472,7 +472,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </article>
 
           {/* Share Section */}
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-4 p-4 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50">
               <span className="text-gray-600 dark:text-gray-400">
                 Share this article:
@@ -485,7 +485,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 }/articles/${article.id}`}
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
 
