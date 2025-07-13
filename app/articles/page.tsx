@@ -1,11 +1,11 @@
-import Header from "@/components/header"
-import HireMeBadge from "@/components/hire-me-badge"
-import LightbulbIcon from "@/components/lightbulb-icon"
-import Image from "next/image"
-import Link from "next/link"
-import { Calendar, Clock, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import Header from "@/components/header";
+import HireMeBadge from "@/components/hire-me-badge";
+import LightbulbIcon from "@/components/lightbulb-icon";
+import Image from "next/image";
+import Link from "next/link";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function ArticlesPage() {
   const articles = [
@@ -32,7 +32,7 @@ export default function ArticlesPage() {
         "Saudi Arabia's visa system is complex, with multiple government portals and varying requirements. We built a unified system that simplifies the entire process for businesses and individuals.",
       image: "/placeholder.svg?height=300&width=500",
       category: "GovTech",
-      tags: ["Saudi Arabia", "Government APIs", "Visa Management", "Compliance"],
+      tags: ["Saudi Arabia", "Visa Management", "Compliance", "SetupInSaudi"],
       readTime: "12 min read",
       publishDate: "2024-01-08",
       gradient: "from-emerald-500 to-blue-600",
@@ -62,7 +62,7 @@ export default function ArticlesPage() {
       category: "Compliance",
       tags: ["ZATCA", "E-invoicing", "Saudi Arabia", "Xero", "Marmin"],
       readTime: "15 min read",
-      publishDate: "2023-12-20",
+      publishDate: "2024-12-20",
       gradient: "from-orange-500 to-red-600",
     },
     {
@@ -93,7 +93,7 @@ export default function ArticlesPage() {
       publishDate: "2023-11-25",
       gradient: "from-teal-500 to-green-600",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 transition-all duration-300">
@@ -108,7 +108,8 @@ export default function ArticlesPage() {
               Articles
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-              Insights from building automation-rich, integration-first systems across multiple industries
+              Insights from building automation-rich, integration-first systems
+              across multiple industries
             </p>
           </div>
 
@@ -123,11 +124,15 @@ export default function ArticlesPage() {
                   <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                     {articles[0].title}
                   </h2>
-                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">{articles[0].content}</p>
+                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                    {articles[0].content}
+                  </p>
                   <div className="flex items-center gap-6 text-sm text-gray-600 dark:text-gray-400 mb-6">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      <span>{new Date(articles[0].publishDate).toLocaleDateString()}</span>
+                      <span>
+                        {new Date(articles[0].publishDate).toLocaleDateString()}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
@@ -136,7 +141,11 @@ export default function ArticlesPage() {
                   </div>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {articles[0].tags.map((tag, index) => (
-                      <Badge key={index} variant="outline" className="text-purple-600 border-purple-600">
+                      <Badge
+                        key={index}
+                        variant="outline"
+                        className="text-purple-600 border-purple-600"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -146,7 +155,10 @@ export default function ArticlesPage() {
                     size="lg"
                     className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
                   >
-                    <Link href={`/articles/${articles[0].id}`} className="inline-flex items-center gap-2">
+                    <Link
+                      href={`/articles/${articles[0].id}`}
+                      className="inline-flex items-center gap-2"
+                    >
                       Read Article
                       <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -184,7 +196,9 @@ export default function ArticlesPage() {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <Badge className={`bg-gradient-to-r ${article.gradient} text-white border-0`}>
+                    <Badge
+                      className={`bg-gradient-to-r ${article.gradient} text-white border-0`}
+                    >
                       {article.category}
                     </Badge>
                   </div>
@@ -194,12 +208,16 @@ export default function ArticlesPage() {
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 line-clamp-2">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{article.excerpt}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                    {article.excerpt}
+                  </p>
 
                   <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-500 mb-4">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
-                      <span>{new Date(article.publishDate).toLocaleDateString()}</span>
+                      <span>
+                        {new Date(article.publishDate).toLocaleDateString()}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
@@ -209,7 +227,11 @@ export default function ArticlesPage() {
 
                   <div className="flex flex-wrap gap-1 mb-4">
                     {article.tags.slice(0, 2).map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline" className="text-xs">
+                      <Badge
+                        key={tagIndex}
+                        variant="outline"
+                        className="text-xs"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -225,7 +247,10 @@ export default function ArticlesPage() {
                     variant="outline"
                     className="w-full group-hover:bg-gray-50 dark:group-hover:bg-gray-700 bg-transparent"
                   >
-                    <Link href={`/articles/${article.id}`} className="inline-flex items-center gap-2">
+                    <Link
+                      href={`/articles/${article.id}`}
+                      className="inline-flex items-center gap-2"
+                    >
                       Read More
                       <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -242,8 +267,8 @@ export default function ArticlesPage() {
                 Stay Updated
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-                Get notified when I publish new articles about building scalable systems, automation, and integration
-                strategies.
+                Get notified when I publish new articles about building scalable
+                systems, automation, and integration strategies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
@@ -263,5 +288,5 @@ export default function ArticlesPage() {
       <HireMeBadge />
       <LightbulbIcon />
     </div>
-  )
+  );
 }

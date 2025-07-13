@@ -190,6 +190,28 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Interactive Projects Call-to-Action */}
+        <div className="mt-20 mb-16 text-center">
+          <div
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-purple-500/10 dark:from-emerald-400/20 dark:via-blue-400/20 dark:to-purple-400/20 rounded-2xl border border-emerald-200/50 dark:border-emerald-700/50 backdrop-blur-sm group cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => (window.location.href = "/projects")}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span className="text-lg font-semibold text-emerald-700 dark:text-emerald-300">
+                Ready to see the magic?
+              </span>
+              <Rocket className="w-5 h-5 text-emerald-600 dark:text-emerald-400 group-hover:rotate-12 transition-transform duration-300" />
+            </div>
+            <div className="ml-4 px-4 py-2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white rounded-xl font-medium hover:from-emerald-700 hover:to-blue-700 transition-all duration-200">
+              View Projects
+            </div>
+          </div>
+          <p className="mt-4 text-gray-600 dark:text-gray-400 text-sm">
+            Explore real-world solutions that drive impact
+          </p>
+        </div>
+
         {/* Achievements Section */}
         <div className="mt-24">
           <div className="text-center mb-16">
